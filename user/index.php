@@ -25,7 +25,7 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to MoviesInfo</title>
+    <title>Bienvenue - My Movies</title>
     <link rel="stylesheet" href="../css/index.css">
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
 
@@ -40,7 +40,7 @@ else{
     <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
         <!-- Brand/logo -->
         <a class="navbar-brand " href="#">
-            <img src="../image/icon.png " alt="logo "> MoviesInfo
+            <img src="../image/icon.png " alt="logo "> My Movies
         </a>
 
         <!-- Links -->
@@ -49,13 +49,13 @@ else{
         <!-- Links -->
         <ul class="navbar-nav ">
             <li class="nav-item ">
-                <a class="nav-link active " href="# ">Home</a>
+                <a class="nav-link active " href="# ">Accueil</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link " href="browse.php">Browse Movies</a>
+                <a class="nav-link " href="browse.php">films</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="request.php">Request</a>
+                <a class="nav-link" href="request.php">Faire une demande</a>
             </li>
             <li class="nav-item dropdown dropleft">
                 <a class="nav-link" href="#" data-toggle="dropdown">
@@ -63,7 +63,7 @@ else{
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item disabled" style="color:silver; text-transform:lowercase;" href="#"><?php echo $_SESSION['username'] ?></a>
-                    <a class="dropdown-item" style="color:#fff;" href="../controller/logout.php">Log Out</a>
+                    <a class="dropdown-item" style="color:#fff;" href="../controller/logout.php">Deconnexion</a>
                 </div>
             </li>
         </ul>
@@ -74,25 +74,19 @@ else{
         <div class="container body ">
             <center>
                 <div class=" inner-body ">
-                    <h1 class="title ">Welcome,
+                    <h1 class="title ">Bonjour,
                         <span style="color: #6AC045; text-transform:lowercase;"><?php echo $_SESSION['username'] ?></span>
                     </h1>
                     <p style="color: white" class="content">
-                        Welcome to
-                        <span style="font-weight:bold; color: #6AC045">MoviesInfo</span> | It is site where you can view information about your favourite movie. MoviesInfo
-                        are best known for the excellent
-                        <span style="font-weight:bold; color: #6AC045">Information</span> for each and every released and not released movies. We are providing this information
-                        by the help of
-                        <span style="font-weight:bold; color: #6AC045">MovieDB </span> which known for their movies resources.
-                        <span style="font-weight:bold; color: #6AC045">Browse</span> Movie and get detail aspect of your favourite movie.
+                        Bienvenue chez
+                        <span style="font-weight:bold; color: #6AC045">My movies</span> La référence du cinéma mondial
                     </p>
                 </div>
                 <div class="container">
                     <a href="browse.php" class="btn-main btn-main-primary">
-                        Browse Movies Now
+                        Consulter nos films
                     </a>
                 </div>
-
             </center>
         </div>
     </header>
@@ -100,19 +94,15 @@ else{
     <div class="about-box ">
         <center>
             <div class="about ">
-                <h1>About this site</h1>
-                <p class="about-content ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nobis officiis, labore non molestias maxime,
-                    corporis saepe voluptatibus culpa sequi minus vitae qui eos expedita quos placeat consectetur voluptas
-                    ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quos, aut voluptatum
-                    a est distinctio cumque eveniet nisi. Soluta, aliquid tempora quae in reiciendis aut aliquam obcaecati
-                    atque dolor perspiciatis?</p>
+                <h1>À propos</h1>
+                <p class="about-content ">MyMovies est une entreprise française créée à Nice en 1997 par John Doe appartenant au secteur d'activité des industries créatives. Elle est spécialisée dans la distribution et l'exploitation d'œuvres cinématographiques et télévisuelles par le biais d'une plateforme dédiée au service de vidéo à la demande. Son siège social se situe à Sophia-Antipolis. Initialement, l'entreprise était uniquement présente dans le secteur de l'exploitation commerciale par la fourniture d'un service en ligne de location et d'achat de DVD livrés à domicile. Elle a ensuite proposé la location moyennant un abonnement mensuel. Son service de vidéo à la demande par abonnement commence en 2007. Depuis, l'entreprise s'est lancée dans la distribution d'un grand nombre de films. Aujourd'hui MyMovies souhaite faire évoluer son marché en créant sa propre plateforme de streaming multi-plateforme</p>
             </div>
         </center>
     </div>
 
     <div id="demo" class="carousel slide container" data-ride="carousel">
         <div class="ratedMoviesHead">
-            <h1>Top Rated Movies</h1>
+            <h1>Top Films</h1>
         </div>
         <!-- Indicators -->
         <ul class="carousel-indicators">
@@ -152,7 +142,7 @@ else{
     </div>
 
     <div class="footer">
-        <p>&copy; Copyright Developed by Genius Coders.</p>
+        <p>&copy; Copyright Developed by Aïcha, Takwa & Naïm</p>
     </div>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

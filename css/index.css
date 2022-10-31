@@ -154,6 +154,7 @@ a{
     border: 0;
     outline: 0;
     border-radius: 10px;
+    cursor:pointer;
 }
 
 .box{
