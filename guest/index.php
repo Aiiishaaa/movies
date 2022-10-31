@@ -10,12 +10,11 @@ if (isset($_SESSION['username'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-FR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to MoviesInfo</title>
     <link rel="stylesheet" href="../css/index.css">
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
@@ -217,7 +216,7 @@ if (isset($_SESSION['username'])) {
     </div>
 
     <div class="footer">
-        <p>&copy; Copyright Developed by Genius Coders.</p>
+        <p>My Movies © Tous droit réservés</p>
     </div>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

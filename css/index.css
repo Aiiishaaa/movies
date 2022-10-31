@@ -77,6 +77,10 @@ header{
     background:transparent;
 }
 
+.logo_mymovies{
+    width: 50px !important;
+}
+
 .about-box {
     background: #222;
     text-align: center;

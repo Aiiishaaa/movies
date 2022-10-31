@@ -11,12 +11,11 @@ if (isset($_SESSION['username'])) {
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="fr-FR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Browse your Faourite Movies</title>
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">-->
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
@@ -91,7 +90,7 @@ if (isset($_SESSION['username'])) {
     </div>
 
     <div class="footer">
-        <p>&copy; Copyright Developed by Genius Coders.</p>
+    <p>My Movies © Tous droit réservés</p>
     </div>
 
     <!-- jQuery library -->

@@ -13,12 +13,11 @@ else{
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-FR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Info Films - My movies</title>
 
     <link rel="stylesheet" href="../css/movie.css">
@@ -77,7 +76,7 @@ else{
     </div>
 
     <div class="footer">
-        <p>&copy; Copyright Developed by Aïcha, Takwa & Naïm</p>
+        <p>My Movies © Tous droit réservés</p>
     </div>
 
     <!-- jQuery library -->
