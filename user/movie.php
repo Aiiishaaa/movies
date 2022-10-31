@@ -68,12 +68,6 @@ else{
     <div class="container">
         <div id="movie"></div>
     </div>
-    <div class="container">
-        <div class="container main-review">
-            <h1 class="title-second review-text">Movie Review</h1>
-            <div id="reviews"></div>
-        </div>
-    </div>
 
     <div class="footer">
         <p>My Movies © Tous droit réservés</p>

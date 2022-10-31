@@ -70,16 +70,16 @@ else{
             <center>
                 <div class=" inner-body ">
                     <h1 class="title ">Welcome to
-                        <span style="color: #6AC045;">Admin Panel</span>
+                        <span style="color: #FBA609;">Admin Panel</span>
                     </h1>
                     <p style="color: white" class="content">
                         Welcome to
-                        <span style="font-weight:bold; color: #6AC045">MoviesInfo</span> | It is site where you can view information about your favourite movie. MoviesInfo
+                        <span style="font-weight:bold; color: #FBA609">MoviesInfo</span> | It is site where you can view information about your favourite movie. MoviesInfo
                         are best known for the excellent
-                        <span style="font-weight:bold; color: #6AC045">Information</span> for each and every released and not released movies. We are providing this information
+                        <span style="font-weight:bold; color: #FBA609">Information</span> for each and every released and not released movies. We are providing this information
                         by the help of
-                        <span style="font-weight:bold; color: #6AC045">MovieDB </span> which known for their movies resources.
-                        <span style="font-weight:bold; color: #6AC045">Browse</span> Movie and get detail aspect of your favourite movie.
+                        <span style="font-weight:bold; color: #FBA609">MovieDB </span> which known for their movies resources.
+                        <span style="font-weight:bold; color: #FBA609">Browse</span> Movie and get detail aspect of your favourite movie.
                     </p>
                 </div>
                 <div class="container">

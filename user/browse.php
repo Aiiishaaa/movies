@@ -75,7 +75,7 @@ else{
                 <div>
                     <center>
                         <div class="content">
-                            <h1 style="color: white">Mo Movies: plus de 10 000 films disponible !</h1>
+                            <h1 style="color: white">My Movies: plus de 10 000 films disponible !</h1>
                             <p style="color: white">
                                 Welcome to
                                 <span style="font-weight:bold; color: #FBA609">MoviesInfo</span> | It is site where you can view information about your favourite movie.
