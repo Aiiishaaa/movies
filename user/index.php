@@ -48,10 +48,10 @@ else{
         <!-- Links -->
         <ul class="navbar-nav ">
             <li class="nav-item ">
-                <a class="nav-link active " href="# ">Accueil</a>
+                <a class="nav-link active" href="# ">Accueil</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link " href="browse.php">films</a>
+                <a class="nav-link" href="browse.php">Films</a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="request.php">Faire une demande</a>
@@ -74,11 +74,11 @@ else{
             <center>
                 <div class=" inner-body ">
                     <h1 class="title ">Bonjour,
-                        <span style="color: #6AC045; text-transform:lowercase;"><?php echo $_SESSION['username'] ?></span>
+                        <span style="color: #FBA609; text-transform:lowercase;"><?php echo $_SESSION['username'] ?></span>
                     </h1>
                     <p style="color: white" class="content">
                         Bienvenue chez
-                        <span style="font-weight:bold; color: #6AC045">My movies</span> La référence du cinéma mondial
+                        <span style="font-weight:bold; color: #FBA609">My movies</span> La référence du cinéma mondial
                     </p>
                 </div>
                 <div class="container">

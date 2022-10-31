@@ -42,7 +42,7 @@ header{
 
 .btn-main {
     padding: 10px 30px;
-    border: 1px solid #6AC045;
+    border: 1px solid #FBA609;
     background: transparent;
     color: #fff !important;
     font-size: 22px;
@@ -53,14 +53,14 @@ header{
 }
 
 .btn-main-primary {
-    background-color: #6AC045;
+    background-color: #FBA609;
     color: #fff !important;
     text-align: center;
     width: 20%;
 }
 
 .btn-main:hover {
-    background: #6AC045;
+    background: #FBA609;
     color: #fff;
 }
 
@@ -70,7 +70,7 @@ header{
     border-radius: 30px;
     padding: 7px 20px;
     width: 50%;
-    border: 2px solid #6AC045;
+    border: 2px solid #FBA609;
     outline: 0;
     display: inline;
     color: #fff;
@@ -154,7 +154,7 @@ a{
     font-size: 14px;
     display: inline;
     color: #fff;
-    background: #6AC045;;
+    background: #FBA609;;
     border: 0;
     outline: 0;
     border-radius: 10px;

@@ -31,6 +31,10 @@ body {
     padding: 10px;
 }
 
+.logo_mymovies{
+    width: 50px !important;
+}
+
 .movie-title {
     font-size: 2.5em;
     line-height: 42px;
@@ -59,7 +63,7 @@ body {
     font-size: 20px;
     display: inline;
     color: #fff;
-    background: #6AC045;;
+    background: #FBA609;;
     border: 0;
     outline: 0;
     border-radius: 10px;

@@ -33,8 +33,8 @@ else{
 
     <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
         <!-- Brand/logo -->
-        <a class="navbar-brand" href="index.php">
-            <img src="../image/icon.png" alt="logo"> My Movies
+        <a class="navbar-brand" href="#">
+            <img class="logo_mymovies" src="../image/logoMyMovies.svg" alt="logo"> My Movies
         </a>
 
         <!-- Links -->

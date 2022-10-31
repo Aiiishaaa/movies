@@ -94,7 +94,7 @@ a{
     font-size: 14px;
     display: inline;
     color: #fff;
-    background: #6AC045;;
+    background: #FBA609;;
     border: 0;
     outline: 0;
     border-radius: 10px;
@@ -120,6 +120,10 @@ h1{
     margin-top: 0px;
     margin-bottom: 0px;
 
+}
+
+.logo_mymovies{
+    width: 50px !important;
 }
 
 .content {

@@ -14,7 +14,7 @@
     font-size: 1em;
     padding: 10px;
     color: #fff;
-    border: 2px solid #6AC045;
+    border: 2px solid #FBA609;
     border-radius: 20px/50px;
     text-decoration: none;
     cursor: pointer;
@@ -22,7 +22,7 @@
     }
     
     .button:hover {
-    background: #6AC045;
+    background: #FBA609;
     }
     
     .popup-overlay {
@@ -51,6 +51,10 @@
     transition: all 1s ease-in-out;
     text-align: center;
     }
+
+    .logo_mymovies{
+        width: 50px !important;
+    }
     
     .log-popup h2 {
     margin-top: 0;
@@ -69,7 +73,7 @@
     color: #333;
     }
     .log-popup .close-window:hover {
-    color: #6AC045 !important;
+    color: #FBA609 !important;
     }
     .log-popup .log-content {
     max-height: 30%;
@@ -91,14 +95,14 @@
     padding: 5px 10px;
     margin-top: 15px;
     width: 60%;
-    border: 1px solid #6AC045;
+    border: 1px solid #FBA609;
     outline: 0;
     border-radius: 50px;
     } 
     
     .btn-log {
         font-size: 18px;
-        background: #6AC045;
+        background: #FBA609;
         padding: 10px;
         border: 0;
         outline: 0;
@@ -111,7 +115,7 @@
 
     .icon {
         padding: 15px 18px;
-        background: #6AC045;
+        background: #FBA609;
         color: white;
         text-align: center;
         border-radius: 50%;

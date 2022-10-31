@@ -22,6 +22,10 @@ body {
     padding: 0 40px; 
 }
 
+.logo_mymovies{
+    width: 50px !important;
+}
+
 
 .footer {
     text-align: center;
@@ -33,7 +37,7 @@ body {
 }
 
 .btn {
-    background: #6AC045;
+    background: #FBA609;
     color: #fff !important;
     font-weight: bold;
     float: right;

@@ -18,7 +18,7 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request For movie</title>
+    <title>Demande de films - My Movies</title>
 
     <link rel="stylesheet" href="../css/request.css">
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
@@ -32,8 +32,8 @@ else{
 <body>
     <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
         <!-- Brand/logo -->
-        <a class="navbar-brand " href="#">
-            <img src="../image/icon.png " alt="logo "> MoviesInfo
+        <a class="navbar-brand" href="#">
+            <img class="logo_mymovies" src="../image/logoMyMovies.svg" alt="logo"> My Movies
         </a>
 
         <!-- Links -->
@@ -42,13 +42,13 @@ else{
         <!-- Links -->
         <ul class="navbar-nav ">
             <li class="nav-item ">
-                <a class="nav-link" href="index.php">Home</a>
+                <a class="nav-link" href="index.php">Accueil</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link " href="browse.php">Browse Movies</a>
+                <a class="nav-link " href="browse.php">Films</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link active" href="#">Request</a>
+                <a class="nav-link active" href="#">Faire une demande</a>
             </li>
             <li class="nav-item dropdown dropleft">
                 <a class="nav-link" href="#" data-toggle="dropdown">
@@ -56,7 +56,7 @@ else{
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item disabled" style="color:silver; text-transform:lowercase;" href="#"><?php echo $_SESSION['username'] ?></a>
-                    <a class="dropdown-item" style="color:#fff;" href="../controller/logout.php">Log Out</a>
+                    <a class="dropdown-item" style="color:#fff;" href="../controller/logout.php">Deconnexion</a>
                 </div>
             </li>
         </ul>
@@ -69,16 +69,16 @@ else{
             <form action="../controller/req.php" method="post">
                 <div class="row">
                     <div class="col-md-6 box1">
-                        <h3 style="margin-bottom:50px;"><span style="font-weight:bold; color: #6AC045">Movie Request</span></h3>
-                        <label for="title">Movie Title:</label><br>
+                        <h3 style="margin-bottom:50px;"><span style="font-weight:bold; color: #FBA609">Faire une demande</span></h3>
+                        <label for="title">Titre du film:</label><br>
                         <input type="text" name="title" class="input" requireds><br>
-                        <label for="message">Request Message(Optional):</label><br>
+                        <label for="message">Votre message:</label><br>
                         <textarea name="msg" cols="30" rows="5" class="input"></textarea>
-                        <input type="submit" class="btn" value="Send Request">
+                        <input type="submit" class="btn" value="Envoyer">
                     </div>
                     <div class="col-md-6 box2 hidden-sm">
-                        <p class="content">We try our best to upload every request our users make. Sadly we can not give a 100% guarantee that we will upload your movie in a given time frame, but we will try our best!</p>
-                        <p class="content" style="margin-top:30px;">To help us, please provide as much information about the movie you want to be uploaded. It will help if you can give IMDb links.</p>
+                        <p class="content">Nous faisons de notre mieux pour publier toutes les demandes de nos utilisateurs. Malheureusement, nous ne pouvons pas garantir à 100% que le titre apparaîtra sur notre site, mais nous ferons de notre mieux pour que cela se fasse !</p>
+                        <p class="content" style="margin-top:30px;">Pour nous aider, veuillez fournir autant d'informations que possible sur le film. Les liens TMDB peuvent également être utiles.</p>
                     </div>
                 </div>   
             </form>
@@ -89,7 +89,7 @@ else{
             <h2>Success</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
-                <p>Your request submitted successfully :)</p>
+                <p>Votre demande à été envoyer avec succès</p>
             </div>
         </div>
     </div>

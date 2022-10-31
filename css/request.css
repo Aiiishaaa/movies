@@ -25,6 +25,10 @@ header{
     padding: 20px;
 }
 
+.logo_mymovies{
+    width: 50px !important;
+}
+
 .input {
     font-size: 20px;
     background: #222;
@@ -68,7 +72,7 @@ label {
 }
 
 .btn {
-    background: #6AC045;
+    background: #FBA609;
     color: white;
     font-weight: bold;
     float: right;
