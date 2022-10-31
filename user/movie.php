@@ -20,7 +20,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info Films - My movies</title>
 
-    <link rel="stylesheet" href="../css/movie.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
 
     <!-- Latest compiled and minified CSS -->
@@ -67,12 +67,6 @@ else{
 
     <div class="container">
         <div id="movie"></div>
-    </div>
-    <div class="container">
-        <div class="container main-review">
-            <h1 class="title-second review-text">Movie Review</h1>
-            <div id="reviews"></div>
-        </div>
     </div>
 
     <div class="footer">

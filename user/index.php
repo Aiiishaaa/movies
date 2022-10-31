@@ -25,7 +25,7 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenue - My Movies</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
 
     <!-- Latest compiled and minified CSS -->
@@ -69,14 +69,14 @@ else{
     </nav>
 
 
-    <header>
+    <header class="header_index">
         <div class="container body ">
             <center>
                 <div class=" inner-body ">
                     <h1 class="title ">Bonjour,
                         <span style="color: #FBA609; text-transform:lowercase;"><?php echo $_SESSION['username'] ?></span>
                     </h1>
-                    <p style="color: white" class="content">
+                    <p style="color: white" class="content_index">
                         Bienvenue chez
                         <span style="font-weight:bold; color: #FBA609">My movies</span> La référence du cinéma mondial
                     </p>
