@@ -20,7 +20,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info Films - My movies</title>
 
-    <link rel="stylesheet" href="../css/movie.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
 
     <!-- Latest compiled and minified CSS -->

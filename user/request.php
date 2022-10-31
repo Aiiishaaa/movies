@@ -20,7 +20,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demande de films - My Movies</title>
 
-    <link rel="stylesheet" href="../css/request.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
 
     <!-- Latest compiled and minified CSS -->
@@ -62,9 +62,7 @@ else{
         </ul>
     </nav>
 
-    
-
-    <header>
+    <header class="header_request">
         <div class="container req-box" >
             <form action="../controller/req.php" method="post">
                 <div class="row">
@@ -77,8 +75,8 @@ else{
                         <input type="submit" class="btn" value="Envoyer">
                     </div>
                     <div class="col-md-6 box2 hidden-sm">
-                        <p class="content">Nous faisons de notre mieux pour publier toutes les demandes de nos utilisateurs. Malheureusement, nous ne pouvons pas garantir à 100% que le titre apparaîtra sur notre site, mais nous ferons de notre mieux pour que cela se fasse !</p>
-                        <p class="content" style="margin-top:30px;">Pour nous aider, veuillez fournir autant d'informations que possible sur le film. Les liens TMDB peuvent également être utiles.</p>
+                        <p class="content_request">Nous faisons de notre mieux pour publier toutes les demandes de nos utilisateurs. Malheureusement, nous ne pouvons pas garantir à 100% que le titre apparaîtra sur notre site, mais nous ferons de notre mieux pour que cela se fasse !</p>
+                        <p class="content_request" style="margin-top:30px;">Pour nous aider, veuillez fournir autant d'informations que possible sur le film. Les liens TMDB peuvent également être utiles.</p>
                     </div>
                 </div>   
             </form>

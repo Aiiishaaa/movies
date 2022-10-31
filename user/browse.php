@@ -71,7 +71,6 @@ else{
     <div class="container-fluid body">
         <div class="container">
             <div class="sbox">
-
                 <div>
                     <center>
                         <div class="content">
