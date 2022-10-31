@@ -69,7 +69,7 @@ else{
     <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
         <!-- Brand/logo -->
         <a class="navbar-brand " href="#">
-            <img src="../image/icon.png " alt="logo "> MoviesInfo
+            <img src="../image/icon.png " alt="logo "> My Movies
         </a>
 
         <!-- Links -->
@@ -78,13 +78,13 @@ else{
         <!-- Links -->
         <ul class="navbar-nav ">
             <li class="nav-item ">
-                <a class="nav-link" href="index.php ">Home</a>
+                <a class="nav-link" href="index.php ">Accueil</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link " href="users.php">Manage Users</a>
+                <a class="nav-link " href="users.php">Gestion des utilisateurs</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link active" href="#">Movies Request</a>
+                <a class="nav-link active" href="#">Demandes via formulaire du contact</a>
             </li>
             <li class="nav-item dropdown dropleft">
                 <a class="nav-link" href="#" data-toggle="dropdown">
@@ -92,7 +92,7 @@ else{
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item disabled" style="color:silver; text-transform:lowercase;" href="#"><?php echo $_SESSION['username'] ?></a>
-                    <a class="dropdown-item" style="color:#fff;" href="../controller/logout.php">Log Out</a>
+                    <a class="dropdown-item" style="color:#fff;" href="../controller/logout.php">Se déconnecter</a>
                 </div>
             </li>
         </ul>
@@ -102,7 +102,7 @@ else{
         <form action="" method="post">
             <div class="row">
                 <div class="col-md-8 box1">
-                    <h3 style="margin-bottom:50px;"><span style="font-weight:bold; color: #6AC045">Movies Request Pending</span></h3>
+                    <h3 style="margin-bottom:50px;"><span style="font-weight:bold; color: #6AC045">Demandes via formulaire du contact Pending</span></h3>
                     <?php 
                     echo $list;
                     ?>

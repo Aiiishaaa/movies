@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli('localhost','root','','moviesinfo');
+$conn = new mysqli('localhost','root','','movies');
 
 if ($conn->connect_error) {
    die("Error: There is something error".$conn->connect_error);

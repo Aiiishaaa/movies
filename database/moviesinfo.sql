@@ -19,8 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `moviesinfo`
---
+-- Database: `movies'--
 
 -- --------------------------------------------------------
 
@@ -63,7 +62,7 @@ CREATE TABLE `userdata` (
 
 INSERT INTO `userdata` (`UserId`, `Username`, `Pass`, `Fullname`, `Email`, `status`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin@moviesinfo.cf', 'admin'),
-(22, 'codersgenius', 'coders', 'Genius Coders', 'codersgenius@gmail.com', 'user');
+(22, 'aicha', 'aicha', 'Aicha Hamida', 'aicha.hamida@ynov.com', 'user');
 
 --
 -- Indexes for dumped tables

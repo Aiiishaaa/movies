@@ -36,7 +36,7 @@ if (isset($_SESSION['username'])) {
     <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="../index.php">
-            <img src="../image/icon.png" alt="logo"> MoviesInfo
+            <img src="../image/icon.png" alt="logo">  My Movies
         </a>
 
         <!-- Links -->
@@ -46,13 +46,13 @@ if (isset($_SESSION['username'])) {
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Home</a>
+                <a class="nav-link" href="../index.php">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">Browse Movies</a>
+                <a class="nav-link active" href="#">Parcourir les films</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../index.php#popup1">Log In</a>
+                <a class="nav-link" href="../index.php#popup1">Se connecter </a>
             </li>
         </ul>
     </nav>
@@ -65,15 +65,12 @@ if (isset($_SESSION['username'])) {
                 <div>
                     <center>
                         <div class="content">
-                            <h1 style="color: white">MoviesInfo: Information about over 10k+ movies</h1>
-                            <p style="color: white">
-                                Welcome to
-                                <span style="font-weight:bold; color: #FBA609">MoviesInfo</span> | It is site where you can view information about your favourite movie.
-                                MoviesInfo are best known for the excellent
-                                <span style="font-weight:bold; color: #FBA609">Information</span> for each and every released and not released movies. We are providing
-                                this information by the help of
-                                <span style="font-weight:bold; color: #FBA609">MovieDB </span> which known for their movies resources.
-                                <span style="font-weight:bold; color: #FBA609">Browse</span> Movie and get detail aspect of your favourite movie.
+                            <h1>My Movies : plus de 10K films</h1>
+                            <p>
+                                <span> My Movies</span> 
+                                | C'est un site où vous pouvez consulter des informations sur votre film préféré et créer vos propres playlists 
+                                My Movies est surtout connu pour l'excellente qualité de ses films.
+                                Parcourez les films et obtenez l'aspect détaillé de votre film préféré.
                             </p>
                         </div>
                     </center>

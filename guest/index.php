@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
@@ -15,7 +14,7 @@ if (isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to MoviesInfo</title>
+    <title> My movies </title>
     <link rel="stylesheet" href="../css/index.css">
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
 
@@ -29,10 +28,10 @@ if (isset($_SESSION['username'])) {
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
+    <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="../index.php">
-            <img src="../image/icon.png" alt="logo"> MoviesInfo
+            <img src="../image/icon.png" alt="logo"> My Movies
         </a>
 
         <!-- Links -->
@@ -42,13 +41,13 @@ if (isset($_SESSION['username'])) {
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link active" href="#">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="browse.php">Browse Movies</a>
+                <a class="nav-link" href="browse.php">Parcourir les films</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#popup1">Log In</a>
+                <a class="nav-link" href="#popup1">Se connecter</a>
             </li>
         </ul>
     </nav>
@@ -56,15 +55,15 @@ if (isset($_SESSION['username'])) {
     <!-- Pop up boxes for login and registration -->
     <div id="popup1" class="popup-overlay">
         <div class="log-popup">
-            <h2>Log In</h2>
+            <h2>Se connecter</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
                 <form action="../controller/login.php" method="post">
                     <i class="fa fa-user icon"></i>
-                    <input type="text" placeholder="Username" name="username" class="log-input" required>
+                    <input type="text" placeholder="Nom d'utilisateur" name="username" class="log-input" required>
                     <br>
                     <i class="fa fa-lock icon"></i>
-                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <input type="password" placeholder="Mot de passe" name="password" class="log-input" required>
                     <br>
                     <input type="submit" value="Log In" name="signup-btn" class="btn-log">
                 </form>
@@ -74,25 +73,25 @@ if (isset($_SESSION['username'])) {
 
     <div id="popup2" class="popup-overlay">
         <div class="log-popup">
-            <h2>Sign Up</h2>
+            <h2>S'inscrire</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
                 <form action="../controller/register.php" method="post">
                     <i class="fa fa-user icon"></i>
-                    <input type="text" placeholder="Enter your name" name="fullname" class="log-input" required>
+                    <input type="text" placeholder="Saisissez votre nom" name="fullname" class="log-input" required>
                     <br>
                     <i class="fa fa-envelope icon"></i>
-                    <input type="email" placeholder="Enter your email" name="email" class="log-input" required>
+                    <input type="email" placeholder="Saisissez votre email" name="email" class="log-input" required>
                     <br>
                     <i class="fa fa-link icon"></i>
-                    <input type="text" placeholder="Enter username" name="username" class="log-input" required>
+                    <input type="text" placeholder="Saisissez votre nom d'utilisateur" name="username" class="log-input" required>
                     <br>
                     <i class="fa fa-lock icon"></i>
-                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <input type="password" placeholder="Mot de passe " name="password" class="log-input" required>
                     <br>
-                    <input type="checkbox" name="chkbox" required> I agree to Terms and Conditions
+                    <input type="checkbox" name="chkbox" required> J'accepte les conditions générales
                     <br>
-                    <input type="submit" value="Sign Up" name="signup-btn" class="btn-log">
+                    <input type="submit" value="S'inscrire" name="signup-btn" class="btn-log">
                 </form>
             </div>
         </div>
@@ -102,32 +101,31 @@ if (isset($_SESSION['username'])) {
             <h2>Success</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
-                <p>Acoount is created Successfully.Now you can login your account :)</p>
+                <p>Votre compte a été créé avec succès et vous pouvez maintenant vous connecter à votre compte !</p>
                 <a href="#popup1" class="btn-main btn-main-primary">
-                        Log In
+                    Se connecter
                 </a>
             </div>
         </div>
     </div>
     <div id="error" class="popup-overlay">
         <div class="log-popup">
-            <h2>Error</h2>
+            <h2>Erreur</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
-                <p>Username or Email already exist :( Try Again...</p>
+                <p>Ce nom d'utilisateur / Ce mail existe déjà.</p>
             </div>
         </div>
     </div>
     <div id="error1" class="popup-overlay">
         <div class="log-popup">
-            <h2>Error</h2>
+            <h2>Erreur</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
-                <p>No Account Found :( Try Again...</p>
+                <p>Pas de compte trouvé </p>
             </div>
         </div>
     </div>
-    <!-- End of Pop up boxes for login and registration -->
 
 
 
@@ -135,25 +133,20 @@ if (isset($_SESSION['username'])) {
         <div class="container body ">
             <center>
                 <div class="inner-body ">
-                    <h1 class="title ">Welcome to
-                        <span style="color: #FBA609 ">MoviesInfo</span>
-                    </h1>
-                    <p style="color: white" class="content">
-                        Welcome to
-                        <span style="font-weight:bold; color: #FBA609">MoviesInfo</span> | It is site where you can view information about your favourite movie. MoviesInfo
-                        are best known for the excellent
-                        <span style="font-weight:bold; color: #FBA609">Information</span> for each and every released and not released movies. We are providing this information
-                        by the help of
-                        <span style="font-weight:bold; color: #FBA609">MovieDB </span> which known for their movies resources.
-                        <span style="font-weight:bold; color: #FBA609">Browse</span> Movie and get detail aspect of your favourite movie.
+                    <h1> My Movies </h1>
+                    <p class="content">
+                        <span> Regardez les meilleurs films en ligne</span>
+                        | C'est un site où vous pouvez consulter des informations sur votre film préféré et créer vos propres playlists
+                        My Movies est surtout connu pour l'excellente qualité de ses films.
+                        Parcourez les films et obtenez l'aspect détaillé de votre film préféré.
                     </p>
                 </div>
                 <div class="container">
                     <a href="#popup1" class="btn-main btn-main-primary">
-                        Log In
+                        Se connecter
                     </a>
                     <a href="#popup2" class="btn-main">
-                        Sign Up
+                        S'inscrire
                     </a>
                 </div>
 
@@ -164,7 +157,7 @@ if (isset($_SESSION['username'])) {
     <div class="about-box ">
         <center>
             <div class="about ">
-                <h1>About this site</h1>
+                <h1> A propos </h1>
                 <p class="about-content ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nobis officiis, labore non molestias maxime,
                     corporis saepe voluptatibus culpa sequi minus vitae qui eos expedita quos placeat consectetur voluptas
                     ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quos, aut voluptatum
@@ -174,9 +167,9 @@ if (isset($_SESSION['username'])) {
         </center>
     </div>
 
-   <div id="demo" class="carousel slide container" data-ride="carousel">
+    <div id="demo" class="carousel slide container" data-ride="carousel">
         <div class="ratedMoviesHead">
-            <h1>Top Rated Movies</h1>
+            <h1>Films les mieux notés</h1>
         </div>
         <!-- Indicators -->
         <ul class="carousel-indicators">
@@ -227,8 +220,7 @@ if (isset($_SESSION['username'])) {
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/main.js"></script>
     <script>

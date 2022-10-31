@@ -15,7 +15,7 @@ if (isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Information</title>
+    <title>Informations film</title>
 
     <link rel="stylesheet" href="../css/movie.css">
 
@@ -32,7 +32,7 @@ if (isset($_SESSION['username'])) {
     <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="../index.php">
-            <img src="../image/icon.png" alt="logo"> MoviesInfo
+            <img src="../image/icon.png" alt="logo"> My Movies
         </a>
 
         <!-- Links -->
@@ -42,13 +42,13 @@ if (isset($_SESSION['username'])) {
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">Home</a>
+                <a class="nav-link" href="../index.php">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="browse.php">Browse Movies</a>
+                <a class="nav-link active" href="browse.php">Parcourir les films</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../index.php#popup1">Log In</a>
+                <a class="nav-link" href="../index.php#popup1">Se connecter</a>
             </li>
         </ul>
     </nav>
