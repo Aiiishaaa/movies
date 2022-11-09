@@ -2,16 +2,16 @@
 
    session_start();
 
-   header('location: ../user/request.php#success');
+   header('location: ../user/contact.php#success');
    
    include('connectdb.php');
 
-    // $fullname = $_POST['fullname'];
-    // $email = $_POST['email'];
+    $contactName = $_POST['contactName'];
+    $email = $_POST['email'];
     // $username = $_POST['username'];
     // $password = $_POST['password'];
 
-    $title = $_POST['title'];
+    $Sujet= $_POST['Sujet'];
     $message = $_POST['msg'];
     $user = $_SESSION['username'];
 
@@ -20,7 +20,7 @@
 
     // $res = $conn->query($q);
     // $num = mysqli_num_rows($res);  
-    $sql = "INSERT INTO request (RequestUser,RequestTitle,RequestMessage) values('$user','$title','$message')";
+    $sql = "INSERT INTO contact (ContactName,ContactEmail,ContactSujet,ContactMessage) values('$user','$title','$message')";
 
     $result = $conn -> query($sql);
 

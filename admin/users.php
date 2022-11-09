@@ -52,7 +52,7 @@ include('userlist.php');
                 <a class="nav-link active" href="#">Gestion des utilisateurs</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="moviesrequest.php">Demandes via formulaire du contact</a>
+                <a class="nav-link" href="contact.php">Demandes via formulaire du contact</a>
             </li>
             <li class="nav-item dropdown dropleft">
                 <a class="nav-link" href="#" data-toggle="dropdown">

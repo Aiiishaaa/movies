@@ -6,9 +6,9 @@ if (!isset($_SESSION['username'])) {
 }
 
 include('connectdb.php');
-$id=$_REQUEST['id'];
+$id=$_CONTACT['id'];
 
-$del = "DELETE  FROM request WHERE RequestId= '$id'"; 
+$del = "DELETE  FROM contact WHERE ContactId= '$id'"; 
 $result = $conn -> query($del);
 header("Location: ../admin/formContact.php"); 
 $conn->close();

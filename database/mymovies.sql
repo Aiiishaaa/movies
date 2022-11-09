@@ -17,16 +17,17 @@ SET time_zone  "+00:00";
 
 CREATE TABLE `contact` (
   `ContactId` int(20) NOT NULL,
+  `ContactName` varchar(50) NOT NULL,
   `ContactEmail` varchar(100) NOT NULL,
-  `ContactTitle` varchar(200) NOT NULL,
+  `ContactSujet` varchar(200) NOT NULL,
   `ContactMessage` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF-8;
 
---
--- Dumping data for table `request`
+--ContactEmail
+-- Dumping data for table `Contact`
 --
 
-INSERT INTO `request` (`RequestId`, `RequestEmail`, `RequestTitle`, `RequestMessage`) VALUES
+INSERT INTO `contact` (`ContactId`,`ContactName` `ContactEmail`, `ContactSujet`, `ContactMessage`) VALUES
 (1, 'Aicha', 'Demande de renseignement', 'Bonjour, Merci de me communiquer les étapes de suppressions de compte');
 
 -- --------------------------------------------------------
@@ -73,7 +74,7 @@ ALTER TABLE `userdata`
 --
 
 --
--- AUTO_INCREMENT for table `request`
+-- AUTO_INCREMENT for table `Contact`
 --
 ALTER TABLE `contact`
   MODIFY `ContactId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
