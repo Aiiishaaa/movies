@@ -8,87 +8,204 @@ if (isset($_SESSION['username'])) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 
 <html lang="fr-FR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse your Faourite Movies</title>
-    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">-->
-    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="Film, playlist,Free streaming, " />
+    <meta name="description" content=" Films en ligne " />
+    <meta name="author" content="Aicha Takwa Naïm" />
+    <link rel="shortcut icon" href="../images/favicon.ico" type="">
+    <title> My Movies </title>
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- nice select  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+    <!-- font awesome style -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="../css/popup.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
 </head>
 
 <body>
+    <!-- header section strats -->
+    <header class="header_section ">
+        <div class="container ">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="index.php">
+                    <span>
+                        My Movies
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button " data-toggle="collapse " data-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+                    <span class=" "> </span>
+                </button>
 
-    <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
-        <!-- Brand/logo -->
-        <a class="navbar-brand" href="../index.php">
-            <img src="../image/icon.png" alt="logo">  My Movies
-        </a>
-
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-
-        </ul>
-        <!-- Links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="../index.php">Accueil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Parcourir les films</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../index.php#popup1">Se connecter </a>
-            </li>
-        </ul>
-    </nav>
-
-
-    <div class="container-fluid body">
-        <div class="container">
-            <div class="sbox">
-
-                <div>
-                    <center>
-                        <div class="content">
-                            <h1>My Movies : plus de 10K films</h1>
-                            <p>
-                                <span> My Movies</span> 
-                                | C'est un site où vous pouvez consulter des informations sur votre film préféré et créer vos propres playlists 
-                                My Movies est surtout connu pour l'excellente qualité de ses films.
-                                Parcourez les films et obtenez l'aspect détaillé de votre film préféré.
-                            </p>
-                        </div>
-                    </center>
-                    <form id="searchForm">
-                        <input type="text" class="searchBox" placeholder="Search Movies here" id="searchText">
-                    </form>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+                    <ul class="navbar-nav mx-auto ">
+                        <li class="nav-item active ">
+                            <a class="nav-link " href="index.php ">Accueil <span class="sr-only ">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="browse.php">Catalogue</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="about.php ">Playlists publiques</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="contact.php ">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="user_option ">
+                        <form class="form-inline ">
+                            <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
+                                <i class="fa fa-search "></i>
+                            </button>
+                        </form>
+                        <a href="register.html" class="connexion ">
+                            <i class="fa fa-user "></i>
+                        </a>
+                    </div>
                 </div>
+            </nav>
+        </div>
+        </div>
+    </header>
+    <!-- end header section -->
+
+    <!--  start category section -->
+    <section class="browse-section">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="sbox">
+
+                    <div>
+                        <center>
+                            <div class="content">
+                                <h1>My Movies : plus de 10K films</h1>
+                                <p>Parcourez notre base de données de films et trouvez votre film préféré</p>
+
+                            </div>
+                        </center>
+                        <div class="container">
+                            <div class="mt-4 mb-3 row height d-flex justify-content-center align-items-center">
+                                <div class=" offset-lg-3 col-lg-6 col-md-6">
+                                    <form id="searchForm">
+                                        <input type="text" class="searchBox" placeholder="Chercher un film " id="searchText">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div id="movies" class="row"></div>
             </div>
         </div>
 
-        <div class="container">
-            <div id="movies" class="row"></div>
-        </div>
-    </div>
 
-    <div class="footer">
-    <p>My Movies © Tous droit réservés</p>
-    </div>
+
+    </section>
+
+    <!-- footer section -->
+    <footer class="footer_section ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-4 footer-col ">
+                    <div class="footer_contact ">
+                        <h4>
+                            Contactez-nous
+                        </h4>
+                        <div class="contact_link_box ">
+
+                            <a href=" ">
+                                <i class="fa fa-phone " aria-hidden="true "></i>
+                                <span>
+                                    06.00.00.00.00
+                                </span>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-envelope " aria-hidden="true "></i>
+                                <span>
+                                    contact@mymovies.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col ">
+                    <div class="footer_detail ">
+                        <a href=" " class="footer-logo ">
+                            <h4>My Movies</h4>
+                        </a>
+                        <p>
+                            Plus de 10K films </p>
+                        <div class="footer_social ">
+                            <a href=" ">
+                                <i class="fa fa-facebook " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-twitter " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-linkedin " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-instagram " aria-hidden="true "></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col ">
+                    <div class="footer_link ">
+                        <h4>
+                            Liens utiles
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href=" ">
+                                    Politique de cookies
+                                </a>
+                            </li>
+                            <li>
+                                <a href=" ">
+                                    Conditions d'utilisation
+                                </a>
+                            </li>
+                            <li>
+                                <a href=" ">
+                                    Mentions légales
+                                </a>
+                            </li>
+                            <li>
+                                <a href=" ">
+                                    Politique de confidentialité
+                                </a>
+                            </li>
+                            <li>
+                                <a href=" ">
+                                    Plan du site
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <!-- footer section -->
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -99,8 +216,7 @@ if (isset($_SESSION['username'])) {
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/main.js"></script>
     <script>

@@ -1,227 +1,245 @@
-<?php
-session_start();
-if (isset($_SESSION['username'])) {
-    if ($_SESSION['status'] == "admin") {
-        header('location: ../admin/index.php');
-    } else {
-        header('location: ../user/index.php');
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="fr-FR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> My movies </title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="Film, playlist,Free streaming, " />
+    <meta name="description" content=" Films en ligne " />
+    <meta name="author" content="Aicha Takwa Naïm" />
+    <link rel="shortcut icon" href="../images/favicon.ico" type="">
+    <title> My Movies </title>
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- nice select  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+    <!-- font awesome style -->
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel=" stylesheet " href="../css/bootstrap.min.css ">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="../css/popup.css">
-
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
-        <!-- Brand/logo -->
-        <a class="navbar-brand" href="../index.php">
-            <img src="../image/icon.png" alt="logo"> My Movies
-        </a>
 
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-
-        </ul>
-        <!-- Links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Accueil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="browse.php">Parcourir les films</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#popup1">Se connecter</a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Pop up boxes for login and registration -->
-    <div id="popup1" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Se connecter</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <form action="../controller/login.php" method="post">
-                    <i class="fa fa-user icon"></i>
-                    <input type="text" placeholder="Nom d'utilisateur" name="username" class="log-input" required>
-                    <br>
-                    <i class="fa fa-lock icon"></i>
-                    <input type="password" placeholder="Mot de passe" name="password" class="log-input" required>
-                    <br>
-                    <input type="submit" value="Log In" name="signup-btn" class="btn-log">
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="popup2" class="popup-overlay">
-        <div class="log-popup">
-            <h2>S'inscrire</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <form action="../controller/register.php" method="post">
-                    <i class="fa fa-user icon"></i>
-                    <input type="text" placeholder="Saisissez votre nom" name="fullname" class="log-input" required>
-                    <br>
-                    <i class="fa fa-envelope icon"></i>
-                    <input type="email" placeholder="Saisissez votre email" name="email" class="log-input" required>
-                    <br>
-                    <i class="fa fa-link icon"></i>
-                    <input type="text" placeholder="Saisissez votre nom d'utilisateur" name="username" class="log-input" required>
-                    <br>
-                    <i class="fa fa-lock icon"></i>
-                    <input type="password" placeholder="Mot de passe " name="password" class="log-input" required>
-                    <br>
-                    <input type="checkbox" name="chkbox" required> J'accepte les conditions générales
-                    <br>
-                    <input type="submit" value="S'inscrire" name="signup-btn" class="btn-log">
-                </form>
-            </div>
-        </div>
-    </div>
-    <div id="success" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Success</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <p>Votre compte a été créé avec succès et vous pouvez maintenant vous connecter à votre compte !</p>
-                <a href="#popup1" class="btn-main btn-main-primary">
-                    Se connecter
+    <!-- header section strats -->
+    <header class="header_section ">
+        <div class="container ">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="index.php">
+                    <span>
+                        My Movies
+                    </span>
                 </a>
-            </div>
-        </div>
-    </div>
-    <div id="error" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Erreur</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <p>Ce nom d'utilisateur / Ce mail existe déjà.</p>
-            </div>
-        </div>
-    </div>
-    <div id="error1" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Erreur</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <p>Pas de compte trouvé </p>
-            </div>
-        </div>
-    </div>
+                <button class="navbar-toggler" type="button " data-toggle="collapse " data-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+                    <span class=" "> </span>
+                </button>
 
-
-
-    <header>
-        <div class="container body ">
-            <center>
-                <div class="inner-body ">
-                    <h1> My Movies </h1>
-                    <p class="content">
-                        <span> Regardez les meilleurs films en ligne</span>
-                        | C'est un site où vous pouvez consulter des informations sur votre film préféré et créer vos propres playlists
-                        My Movies est surtout connu pour l'excellente qualité de ses films.
-                        Parcourez les films et obtenez l'aspect détaillé de votre film préféré.
-                    </p>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+                    <ul class="navbar-nav mx-auto ">
+                        <li class="nav-item active ">
+                            <a class="nav-link " href="index.php ">Accueil <span class="sr-only ">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="browse.php">Catalogue</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="about.php ">Playlists publiques</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="contact.php ">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="user_option ">
+                        <form class="form-inline ">
+                            <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
+                                <i class="fa fa-search "></i>
+                            </button>
+                        </form>
+                        <a href="register.html" class="connexion ">
+                            <i class="fa fa-user "></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="container">
-                    <a href="#popup1" class="btn-main btn-main-primary">
-                        Se connecter
-                    </a>
-                    <a href="#popup2" class="btn-main">
-                        S'inscrire
-                    </a>
-                </div>
-
-            </center>
+            </nav>
+        </div>
         </div>
     </header>
+    <!-- end header section -->
 
-    <div class="about-box ">
-        <center>
-            <div class="about ">
-                <h1> A propos </h1>
-                <p class="about-content ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nobis officiis, labore non molestias maxime,
-                    corporis saepe voluptatibus culpa sequi minus vitae qui eos expedita quos placeat consectetur voluptas
-                    ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus quos, aut voluptatum
-                    a est distinctio cumque eveniet nisi. Soluta, aliquid tempora quae in reiciendis aut aliquam obcaecati
-                    atque dolor perspiciatis?</p>
+    <!-- start about section -->
+    <section class="about_section">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-6 ">
+                    <div class="img-box">
+                        <img src="../images/logoMyMovies.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-box">
+                        <div class="heading_container ">
+                            <h1>
+                                My Movies </h1>
+                            <p>
+                                C'est un site où vous pouvez consulter des informations sur votre film préféré et créer vos propres playlists </p>
+                            <p> Movies est surtout connu pour l'excellente qualité de ses films.</p>
+                            </p>
+                            <div class="btn-box">
+                                <a href="browser.php" class="btn">
+                                    Parcourez les films et obtenez l'aspect détaillé de votre film préféré.</a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="demo" class="carousel slide container" data-ride="carousel">
+                    <div class="ratedMoviesHead">
+                        <h2>Films les mieux notés</h2>
+                    </div>
+    
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div id="topMovies1" class="row"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="topMovies2" class="row"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="topMovies3" class="row"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="topMovies4" class="row"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="topMovies5" class="row"></div>
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
             </div>
-        </center>
-    </div>
-
-    <div id="demo" class="carousel slide container" data-ride="carousel">
-        <div class="ratedMoviesHead">
-            <h1>Films les mieux notés</h1>
         </div>
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-            <li data-target="#demo" data-slide-to="3"></li>
-            <li data-target="#demo" data-slide-to="4"></li>
-        </ul>
+    </section>
 
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div id="topMovies1" class="row"></div>
-            </div>
-            <div class="carousel-item">
-                <div id="topMovies2" class="row"></div>
-            </div>
-            <div class="carousel-item">
-                <div id="topMovies3" class="row"></div>
-            </div>
-            <div class="carousel-item">
-                <div id="topMovies4" class="row"></div>
-            </div>
-            <div class="carousel-item">
-                <div id="topMovies5" class="row"></div>
-            </div>
-        </div>
+    <!-- end about section -->
 
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
-    </div>
+    <!-- footer section -->
+    <footer class="footer_section ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-4 footer-col ">
+                    <div class="footer_contact ">
+                        <h4>
+                            Contactez-nous
+                        </h4>
+                        <div class="contact_link_box ">
 
-    <div class="footer">
-        <p>My Movies © Tous droit réservés</p>
-    </div>
-    <!-- jQuery library -->
+                            <a href=" ">
+                                <i class="fa fa-phone " aria-hidden="true "></i>
+                                <span>
+                                    06.00.00.00.00
+                                </span>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-envelope " aria-hidden="true "></i>
+                                <span>
+                                    contact@mymovies.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col ">
+                    <div class="footer_detail ">
+                        <a href="index.php" class="footer-logo ">
+                            <img src="../images/favicon.ico" alt=" ">
+                            <h4>My Movies</h4>
+                        </a>
+                        <p>
+                            Plus de 10K films </p>
+                        <div class="footer_social ">
+                            <a href=" ">
+                                <i class="fa fa-facebook " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-twitter " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-linkedin " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-instagram " aria-hidden="true "></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 footer-col ">
+                    <div class="footer_link ">
+                        <h4>
+                            Liens utiles
+                        </h4>
+                        <ul>
+                            <li>
+                                <a href=" ">
+                                    Politique de cookies
+                                </a>
+                            </li>
+                            <li>
+                                <a href=" ">
+                                    Conditions d'utilisation
+                                </a>
+                            </li>
+                            <li>
+                                <a href=" ">
+                                    Mentions légales
+                                </a>
+                            </li>
+                            <li>
+                                <a href=" ">
+                                    Politique de confidentialité
+                                </a>
+                            </li>
+                            <li>
+                                <a href=" ">
+                                    Plan du site
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <!-- footer section -->
+
+    <!-- jQery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous ">
+    </script>
+    <!-- bootstrap js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
+    <!-- custom js -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js ">
+    </script>
+    <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js "></script>
+    <!-- main js -->
     <script src="../js/main.js"></script>
     <script>
         getTopMovies();

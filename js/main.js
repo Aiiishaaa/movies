@@ -1,8 +1,45 @@
+const container = document.querySelector(".formulaire"),
+    pwShowHide = document.querySelectorAll(".showHidePw"),
+    pwFields = document.querySelectorAll(".password"),
+    signUp = document.querySelector(".signup-link"),
+    login = document.querySelector(".login-link");
+
+//   js code to show/hide password and change icon
+pwShowHide.forEach(eyeIcon => {
+    eyeIcon.addEventListener("click", () => {
+        pwFields.forEach(pwField => {
+            if (pwField.type === "password") {
+                pwField.type = "text";
+
+                pwShowHide.forEach(icon => {
+                    icon.classList.replace("uil-eye-slash", "uil-eye");
+                })
+            } else {
+                pwField.type = "password";
+
+                pwShowHide.forEach(icon => {
+                    icon.classList.replace("uil-eye", "uil-eye-slash");
+                })
+            }
+        })
+    })
+})
+
+// js code to appear signup and login form
+signUp.addEventListener("click", () => {
+    container.classList.add("active");
+});
+login.addEventListener("click", () => {
+    container.classList.remove("active");
+});
+
+
+
+
 $(document).ready(() => {
     $('#searchForm').on('input', (e) => {
 
         let searchText = $('#searchText').val();
-
         if (searchText == null) {
             console.log(true);
         }
@@ -21,7 +58,7 @@ $(document).ready(() => {
 //     getMovies(search.value);
 // })
 function popularMovies() {
-    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=5ec279387e9aa9488ef4d00b22acc451&language=en-US&page=1')
+    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=2cd5601329a73db67d46ec6f68a6fcc9&language=fr-FR&page=1')
         .then((response) => {
             console.log(response);
 
@@ -45,7 +82,7 @@ function popularMovies() {
                         <div class="browse-movie-bottom">
                             <a href="#" onclick="movieSelected('${movie.id}')" class="browse-movie-title">${movie.title}</a>
                             <div class="browse-movie-year">${year}</div>
-                            <button type="submit" class="button" onclick="movieSelected('${movie.id}')">Movie Details</button>
+                            <button type="submit" class="button" onclick="movieSelected('${movie.id}')">  Détails du film</button>
                         </div>
                         </div>
                     </div>
@@ -62,7 +99,7 @@ function popularMovies() {
 function getMovies(searchText) {
 
     axios.get('https://api.themoviedb.org/3/search/movie?api_key=5ec279387e9aa9488ef4d00b22acc451&query=' + searchText)
-        //  axios.get('http://www.omdbapi.com/?apikey=a15bc27e&s=' + searchText)
+    axios.get('http://www.omdbapi.com/?apikey=a15bc27e&s=' + searchText)
         .then((response) => {
             console.log(response);
 
@@ -87,7 +124,7 @@ function getMovies(searchText) {
                             <div class="browse-movie-bottom">
                                 <a href="#" onclick="movieSelected('${movie.id}')" class="browse-movie-title">${movie.title}</a>
                                 <div class="browse-movie-year">${year}</div>
-                                <button type="submit" class="button" onclick="movieSelected1('${movie.id}')">Movie Details</button>
+                                <button type="submit" class="button" onclick="movieSelected1('${movie.id}')">   Détails du film </button>
                             </div>
                             </div>
                         </div>
@@ -106,19 +143,12 @@ function movieSelected(id) {
     return false;
 }
 
-// function movieSelected2(id) {
-//     sessionStorage.setItem('id', id);
-//     window.location = 'guest/movie.php';
-//     return false;
-// }
-
 function getReviews() {
 
     let movieId = sessionStorage.getItem('id');
-    axios.get(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=5ec279387e9aa9488ef4d00b22acc451&language=en-US&page=1`)
+    axios.get(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=5ec279387e9aa9488ef4d00b22acc451&language=fr-FR&page=1`)
 
-        .then((response) => {
-            // https://api.themoviedb.org/3/movie/299536/reviews?api_key=5ec279387e9aa9488ef4d00b22acc451&language=en-US&page=1
+    .then((response) => {
             console.log(response);
             let reviews = response.data.results;
             console.log(reviews);
@@ -128,11 +158,9 @@ function getReviews() {
 
                 output += `
                         <div class="row review">
-                            <div class="col-md-2 box-review1">
-                                <img src="../image/default-user.png" alt="user" class="user-profile">
-                            </div>
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                             <div class="col-md-10 box-review2">
-                                <h5>Reviewed by ${review.author}</h5>
+                                <h5>Critiqué par  ${review.author}</h5>
                                 <div class="content">
                                     <p style="color:silver;">${review.content}</p>
                                 </div>
@@ -152,9 +180,9 @@ function getMovie() {
     let movieId = sessionStorage.getItem('id');
 
     //test id -> 299536
-    axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=5ec279387e9aa9488ef4d00b22acc451`)
-        .then((response) => {
-            // https://api.themoviedb.org/3/movie/299536/reviews?api_key=5ec279387e9aa9488ef4d00b22acc451&language=en-US&page=1
+    axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=5ec279387e9aa9488ef4d00b22acc451&language=fr-FR`)
+
+    .then((response) => {
             console.log(response);
             let movie = response.data;
 
@@ -175,11 +203,11 @@ function getMovie() {
             budget = Math.round(budget);
 
             if (revenue === 0) {
-                revenue = "Revenue is less than million dollers"
+                revenue = "Le revenu est inférieur à un million de dollars"
             }
 
             if (budget === 0) {
-                budget = "Budget is less than million dollers"
+                budget = "Le budget est inférieur à un million de dollars"
             }
 
             let genre = [];
@@ -190,8 +218,8 @@ function getMovie() {
             genres = genre.join(' / ');
 
             let output1 = `
-            <div class="row">
-                <div class="col-md-4 box1">
+            <div class="row mt-5">
+                <div class="col-md-4 box1 ">
                     <img src="${poster}" class="poster-image">
                 </div>
                 <div class="col-md-4 box2">
@@ -202,11 +230,9 @@ function getMovie() {
 
                     <ul class="list-group">
                         <li class="list-group-item active">
-                            <strong>Rating: </strong> ${movie.vote_average} / 10</li>
+                            <strong>Note: </strong> ${movie.vote_average} / 10</li>
                         <li class="list-group-item active">
-                            <strong>Status: </strong> ${movie.status}</li>
-                        <li class="list-group-item active">
-                            <strong>Duration: </strong> ${movie.runtime} min</li>
+                            <strong> Durée: </strong> ${movie.runtime} min</li>
                         <li class="list-group-item active">
                             <strong>Budget: </strong> $ ${budget} million</li>
                         <li class="list-group-item active">
@@ -215,14 +241,14 @@ function getMovie() {
 
                 </div>
 
-                <div class="col-md-4 box3">
-                    <h1 class="title-second">Synopsis</h1>
+                <div class="col-md-4 box3 mt-5">
+                    <h1 class="title-second">Résumé</h1>
                     <p>${movie.overview}</p>
                     <hr style="width: 80%;color: #222;">
                     <div>
                         <a href="http://imdb.com/title/${movie.imdb_id}" target="_blank" class="btn-one">View IMDB</a>
                         <!-- <a href="http://imdb.com/title/${movie.imdb_id}" target="_blank" class="btn-info">View IMDB</a> -->
-                        <a href="browse.php" class="btn-second">Go Back To Search</a>
+                        <a href="browse.php" class="btn-second">Voir le catalogue</a>
                     </div>
                 </div>
             </div>
@@ -236,12 +262,12 @@ function getMovie() {
 
 //// for top rated movies
 function getTopMovies() {
-    axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=5ec279387e9aa9488ef4d00b22acc451&language=en-US&page=1')
+    axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=5ec279387e9aa9488ef4d00b22acc451&language=fr-FR&page=1')
         .then((response) => {
             console.log(response);
 
             let movies = response.data.results;
-            // console.log(movies);
+            console.log(movies);
 
             let output = '';
 
@@ -258,18 +284,17 @@ function getTopMovies() {
                 output += `
                         <div class="col-md-3 box">
                           <div class="movieBox">
-                            <img src="${poster}" alt="poster" width="210" height="315" class="img">
+                            <img src="${poster}" alt="poster" width="220" height="300" class="img">
                             <div class="browse-movie-bottom">
                                 <a href="#" onclick="movieSelected('${movies[index].id}')" class="browse-movie-title">${movies[index].title}</a>
                                 <div class="browse-movie-year">${year}</div>
-                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')">Movie Details</button>
+                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')">  Détails du film</button>
                             </div>
                             </div>
                         </div>
                 `;
             }
             $('#topMovies1').html(output);
-
 
             let output1 = '';
             for (let index = 4; index < 8; index++) {
@@ -289,14 +314,13 @@ function getTopMovies() {
                             <div class="browse-movie-bottom">
                                 <a href="#" onclick="movieSelected('${movies[index].id}')" class="browse-movie-title">${movies[index].title}</a>
                                 <div class="browse-movie-year">${year}</div>
-                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')">Movie Details</button>
+                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')">  Détails du film</button>
                             </div>
                             </div>
                         </div>
                 `;
             }
             $('#topMovies2').html(output1);
-
 
             let output2 = '';
             for (let index = 8; index < 12; index++) {
@@ -316,15 +340,13 @@ function getTopMovies() {
                             <div class="browse-movie-bottom">
                                 <a href="#" onclick="movieSelected('${movies[index].id}')" class="browse-movie-title">${movies[index].title}</a>
                                 <div class="browse-movie-year">${year}</div>
-                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')">Movie Details</button>
+                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')">  Détails du film</button>
                             </div>
                             </div>
                         </div>
                 `;
             }
             $('#topMovies3').html(output2);
-
-
 
             let output3 = '';
             for (let index = 12; index < 16; index++) {
@@ -344,16 +366,13 @@ function getTopMovies() {
                             <div class="browse-movie-bottom">
                                 <a href="#" onclick="movieSelected('${movies[index].id}')" class="browse-movie-title">${movies[index].title}</a>
                                 <div class="browse-movie-year">${year}</div>
-                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')">Movie Details</button>
+                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')"> Détails du film</button>
                             </div>
                             </div>
                         </div>
                 `;
             }
             $('#topMovies4').html(output3);
-
-
-
 
             let output4 = '';
             for (let index = 16; index < 20; index++) {
@@ -373,63 +392,15 @@ function getTopMovies() {
                             <div class="browse-movie-bottom">
                                 <a href="#" onclick="movieSelected('${movies[index].id}')" class="browse-movie-title">${movies[index].title}</a>
                                 <div class="browse-movie-year">${year}</div>
-                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')">Movie Details</button>
+                                <button type="submit" class="button" onclick="movieSelected('${movies[index].id}')">  Détails du film</button>
                             </div>
                             </div>
                         </div>
                 `;
             }
             $('#topMovies5').html(output4);
-            // $.each(movies, (index, movie) => {
-
-            //     if (movie.poster_path === null) {
-            //         poster = "image/default-movie.png";
-            //     } else {
-            //         poster = "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path;
-            //     }
-
-            //     let date = movie.release_date;
-
-            //     let year = date.slice(0, 4);
-            //     output += `
-            //             <div class="col-md-3 box">
-            //               <div class="movieBox">
-            //                 <img src="${poster}" alt="poster" width="210" height="315" class="img">
-            //                 <div class="browse-movie-bottom">
-            //                     <a href="#" onclick="movieSelected('${movie.id}')" class="browse-movie-title">${movie.title}</a>
-            //                     <div class="browse-movie-year">${year}</div>
-            //                     <button type="submit" class="button" onclick="movieSelected('${movie.id}')">Movie Details</button>
-            //                 </div>
-            //                 </div>
-            //             </div>
-            //     `;
-            //     if (index < 4) {
-            //         $('#topMovies1').html(output);
-            //     }
-            //     else if (index < 8) {
-            //         $('#topMovies2').html(output);
-            //     }
-            //     else if (index < 12) {
-            //         $('#topMovies3').html(output);
-            //     }
-            //     else if (index < 16) {
-            //         $('#topMovies4').html(output);
-            //     }
-            //     else if (index < 19) {
-            //         $('#topMovies5').html(output);
-            //     }
-
-            // });
-
-
-            // $('#topMovies').html(output);
         })
         .catch((error) => {
             console.log(error);
         });
 }
-
-
-
-
-

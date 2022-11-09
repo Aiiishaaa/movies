@@ -10,6 +10,6 @@ $id=$_REQUEST['id'];
 
 $del = "DELETE  FROM request WHERE RequestId= '$id'"; 
 $result = $conn -> query($del);
-header("Location: ../admin/moviesrequest.php"); 
+header("Location: ../admin/formContact.php"); 
 $conn->close();
 ?>

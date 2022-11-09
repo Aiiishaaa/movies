@@ -73,19 +73,51 @@
     </header>
     <!-- end header section -->
 
-    <!-- movie section -->
-    <section class="section_movie">
-    <div class="container">
-        <div id="movie" class="row"></div>
-    </div>
-    <div class="container">
-        <div class="container main-review">
-            <h1 class="title-second review-text">Critique du film </h1>
-            <div id="reviews"></div>
+    <!-- contact section -->
+    <section class="contact_section">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    Nous contacter
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form_container">
+                        <form action="">
+                            <div>
+                                <input type="text" class="form-control" placeholder="Nom complet" />
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Téléphone" />
+                            </div>
+                            <div>
+                                <input type="email" class="form-control" placeholder="Mail" />
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Sujet">
+                            </div>
+                            <div>
+                                <textarea class="form-control" placeholder="Message"></textarea>
+                            </div>
+                            
+                            <div class="btn_box">
+                                <button>
+Envoyer                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map_container ">
+                        <div id="googleMap"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
     </section>
-    <!-- end movie section -->
+    <!-- end book section -->
+    <!-- end contact section -->
 
     <!-- end about section -->
 
@@ -181,10 +213,6 @@
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/main.js"></script>
-    <script>
-        getMovie();
-        getReviews();
-    </script>
 </body>
 
 </html>
