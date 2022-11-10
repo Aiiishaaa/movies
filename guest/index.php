@@ -162,7 +162,7 @@ if (isset($_SESSION['username'])) {
         <div class="container ">
             <div class="row ">
                 <div class="img-box col-md-6">
-                    <img src="../images/logoMyMovies.png" alt="">
+                    <img src="../images/logoMyMovies.svg" alt="">
                 </div>
                 <div class=" col-md-6">
                     <div class="detail-box">
