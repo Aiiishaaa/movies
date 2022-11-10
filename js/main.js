@@ -94,7 +94,6 @@ function getMovies(searchText) {
         .get("http://www.omdbapi.com/?apikey=a15bc27e&s=" + searchText)
         .then((response) => {
             console.log(response);
-
             let movies = response.data.results;
             let output = "";
             let output1 = "";
@@ -106,9 +105,7 @@ function getMovies(searchText) {
                         "https://image.tmdb.org/t/p/w185_and_h278_bestv2" +
                         movie.poster_path;
                 }
-
                 let date = movie.release_date;
-
                 let year = date.slice(0, 4);
                 output += `
                         <div class="movieBox col-md-3 col-lg-2">
@@ -116,7 +113,7 @@ function getMovies(searchText) {
                             <div class="browse-movie-bottom">
                                 <a href="#" onclick="movieSelected('${movie.id}')" class="browse-movie-title">${movie.title}</a>
                                 <div class="browse-movie-year">${year}</div>
-                                <button type="submit" class="button" onclick="movieSelected1('${movie.id}')">   Détails du film </button>
+                                <button type="submit" class="button" onclick="movieSelected1('${movie.id}')">Détails du film </button>
                             </div>
                         </div>
                 `;

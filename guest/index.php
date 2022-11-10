@@ -70,8 +70,8 @@
     </header>
     <!-- end header section -->
 
-    <!-- start about section -->
-    <section class="about_section">
+    <!-- start accueil section -->
+    <section class="accueil_section">
         <div class="container ">
             <div class="row ">
                 <div class="col-md-6 ">
@@ -132,7 +132,7 @@
         </div>
     </section>
 
-    <!-- end about section -->
+    <!-- end  section -->
 
     <!-- footer section -->
     <footer class="footer_section ">
@@ -219,7 +219,6 @@
             </div>
     </footer>
     <!-- footer section -->
-
     <!-- jQery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- bootstrap js -->
@@ -240,5 +239,4 @@
         getTopMovies();
     </script>
 </body>
-
 </html>
