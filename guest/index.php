@@ -66,7 +66,6 @@
                 </div>
             </nav>
         </div>
-        </div>
     </header>
     <!-- end header section -->
 
@@ -74,11 +73,9 @@
     <section class="accueil_section">
         <div class="container ">
             <div class="row ">
-                <div class="col-md-6 ">
-                    <div class="img-box">
+                    <div class="img-box col-md-6">
                         <img src="../images/logoMyMovies.png" alt="">
                     </div>
-                </div>
                 <div class=" col-md-6">
                     <div class="detail-box">
                         <div class="heading_container ">
@@ -87,7 +84,6 @@
                             <p>
                                 C'est un site où vous pouvez consulter des informations sur votre film préféré et créer vos propres playlists </p>
                             <p> Movies est surtout connu pour l'excellente qualité de ses films.</p>
-                            </p>
                             <div class="btn-box offset-lg-3">
                                 <a href="browse.php" class="btn">
                                     Parcourez les films </a>

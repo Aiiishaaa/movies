@@ -76,8 +76,8 @@
     <section class="contact_section">
         <div class="container">
             <div class="row">
-                    <img class="offset-lg-2 col-md-6 col-lg" src="../images/logoMyMovies.png" alt="">
-                <div class="col-md-6 col-lg-6">
+                <img class="col-md-6 col-lg-4" src="../images/logoMyMovies.png" alt="">
+                <div class="col-md-6 col-lg-6 offset-lg-1">
                     <h2>
                         Nous contacter
                     </h2>

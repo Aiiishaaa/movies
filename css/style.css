@@ -624,6 +624,10 @@
             padding-bottom: 25px;
         }
         
+        .contact_section img {
+            margin-top: 0px;
+        }
+        
         .contact_section .heading_container {
             margin-bottom: 25px;
         }
@@ -641,26 +645,6 @@
             outline: none;
             -webkit-box-shadow: none;
             box-shadow: none;
-        }
-        
-        .contact_section .form_container .form-control::-webkit-input-placeholder {
-            color: #222222;
-        }
-        
-        .contact_section .form_container .form-control:-ms-input-placeholder {
-            color: #222222;
-        }
-        
-        .contact_section .form_container .form-control::-ms-input-placeholder {
-            color: #222222;
-        }
-        
-        .contact_section .form_container .form-control::placeholder {
-            color: #222222;
-        }
-        
-        .contact_section .form_container .nice-select .current {
-            font-size: 16px;
         }
         
         .contact_section .form_container button {
