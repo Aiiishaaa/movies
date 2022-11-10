@@ -6,12 +6,9 @@
    
    include('connectdb.php');
 
-    $contactName = $_POST['contactName'];
+    $fullname = $_POST['fullname'];
     $email = $_POST['email'];
-    // $username = $_POST['username'];
-    // $password = $_POST['password'];
-
-    $Sujet= $_POST['Sujet'];
+    $Subjet= $_POST['Sujet'];
     $message = $_POST['msg'];
     $user = $_SESSION['username'];
 

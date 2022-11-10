@@ -41,16 +41,16 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent ">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item active ">
-                            <a class="nav-link " href="index.php ">Accueil <span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="index.php">Accueil <span class="sr-only ">(current)</span></a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link " href="browse.php">Catalogue</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="about.php ">Playlists publiques</a>
+                            <a class="nav-link " href="about.php">Playlists publiques</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="contact.php ">Contact</a>
+                            <a class="nav-link " href="contact.php">Contact</a>
                         </li>
                     </ul>
                     <div class="user_option ">
@@ -59,7 +59,7 @@
                                 <i class="fa fa-search "></i>
                             </button>
                         </form>
-                        <a href="register.html" class="connexion ">
+                        <a href="register.php" class="connexion ">
                             <i class="fa fa-user "></i>
                         </a>
                     </div>
@@ -89,7 +89,7 @@
                             <p> Movies est surtout connu pour l'excellente qualité de ses films.</p>
                             </p>
                             <div class="btn-box offset-lg-3">
-                                <a href="browser.php" class="btn">
+                                <a href="browse.php" class="btn">
                                     Parcourez les films </a>
                                 </a>
                             </div>
@@ -163,11 +163,11 @@
                 <div class="col-md-4 footer-col ">
                     <div class="footer_detail ">
                         <a href="index.php" class="footer-logo ">
-                            <img src="../images/favicon.ico" alt=" ">
-                            <h4>My Movies</h4>
+                        <img src="../images/favicon.ico" alt=" ">
+                            <h3>My Movies</h3>
+                            
                         </a>
-                        <p>
-                            Plus de 10K films </p>
+                        <p>Plus de 10K films </p>
                         <div class="footer_social ">
                             <a href=" ">
                                 <i class="fa-brands fa-facebook"></i>
