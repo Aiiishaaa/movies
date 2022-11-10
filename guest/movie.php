@@ -8,7 +8,7 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Site Metas -->
-    <meta name="keywords" content="Film, playlist,Free streaming, " />
+    <meta name="keywords" content="Film, playlist,Free streaming " />
     <meta name="description" content=" Films en ligne " />
     <meta name="author" content="Aicha Takwa Naïm" />
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
@@ -25,8 +25,8 @@
 <body>
 
 
-     <!-- header section strats -->
-     <header class="header_section ">
+    <!-- header section strats -->
+    <header class="header_section ">
         <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
                 <a class="navbar-brand" href="index.php">
@@ -53,15 +53,17 @@
                             <a class="nav-link " href="contact.php ">Contact</a>
                         </li>
                     </ul>
-                    <div class="user_option ">
-                        <form class="form-inline ">
-                            <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
-                                <i class="fa fa-search "></i>
-                            </button>                        </form>
-                        <a href="register.php" class="connexion ">
-                            <i class="fa fa-user "></i>
-                        </a>
-                    </div>
+                    <form class="form-inline ">
+                        <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
+                            <i class="fa fa-search "></i>
+                        </button>
+                    </form>
+                    <a href="#popup1" class="connexion">
+                        <i class="fa fa-user"></i> Se connecter
+                    </a>
+                    <a href="#popup2" class="connexion">
+                        <i class="fa fa-user"></i> S'identifier
+                    </a>
                 </div>
             </nav>
         </div>
@@ -70,26 +72,23 @@
 
     <!-- movie section -->
     <section class="section_movie">
-    <div class="container">
-        <div id="movie" class="row"></div>
-    </div>
-    <div class="container">
-        <div class="container main-review">
-            <h3 class="title-second review-text">Critique du film </h3>
-            <div id="reviews"></div>
-        </div>    
-    </div>
+        <div class="container">
+            <div id="movie" class="row"></div>
+            <div class="main-review mt-5">
+                <h3 class="title-second review-text mt-5">Critique du film </h3>
+                <div id="reviews"></div>
+            </div>
+        </div>
+
     </section>
     <!-- end movie section -->
-
-    <!-- end about section -->
 
     <!-- footer section -->
     <footer class="footer_section ">
         <div class="container ">
             <div class="row ">
-                <div class="col-md-4 footer-col">
-                    <div class="footer_contact">
+                <div class="col-md-4 footer-col ">
+                    <div class="footer_contact ">
                         <h4>
                             Contactez-nous
                         </h4>
@@ -98,37 +97,35 @@
                             <a href=" ">
                                 <i class="fa fa-phone " aria-hidden="true "></i>
                                 <span>
-                  06.00.00.00.00
-                </span>
+                                    06.00.00.00.00
+                                </span>
                             </a>
                             <a href=" ">
                                 <i class="fa fa-envelope " aria-hidden="true "></i>
                                 <span>
-                  contact@mymovies.com
-                </span>
+                                    contact@mymovies.com
+                                </span>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 footer-col ">
                     <div class="footer_detail ">
-                        <a href=" " class="footer-logo ">
-                            <h4>My Movies</h4>
+                        <a href="index.php" class="footer-logo ">
+                            <img src="../images/favicon.ico" alt=" ">
+                            <h3>My Movies</h3>
+
                         </a>
-                        <p>
-                            Plus de 10K films </p>
+                        <p>Plus de 10K films </p>
                         <div class="footer_social ">
                             <a href=" ">
-                                <i class="fa fa-facebook " aria-hidden="true "></i>
+                                <i class="fa-brands fa-facebook"></i>
                             </a>
                             <a href=" ">
-                                <i class="fa fa-twitter " aria-hidden="true "></i>
+                                <i class="fa-brands fa-instagram"></i>
                             </a>
                             <a href=" ">
-                                <i class="fa fa-linkedin " aria-hidden="true "></i>
-                            </a>
-                            <a href=" ">
-                                <i class="fa fa-instagram " aria-hidden="true "></i>
+                                <i class="fa-brands fa-twitter"></i>
                             </a>
                         </div>
                     </div>
@@ -156,12 +153,12 @@
                             </li>
                             <li>
                                 <a href=" ">
-                                    Politique de confidentialité 
+                                    Politique de confidentialité
                                 </a>
                             </li>
                             <li>
                                 <a href=" ">
-                                    Plan du site      
+                                    Plan du site
                                 </a>
                             </li>
 
@@ -172,8 +169,7 @@
     </footer>
     <!-- footer section -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/main.js"></script>
     <script>

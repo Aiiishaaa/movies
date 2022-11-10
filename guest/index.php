@@ -20,7 +20,7 @@ if (isset($_SESSION['username'])) {
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Site Metas -->
-    <meta name="keywords" content="Film, playlist,Free streaming, " />
+    <meta name="keywords" content="Film, playlist,Free streaming " />
     <meta name="description" content=" Films en ligne " />
     <meta name="author" content="Aicha Takwa Naïm" />
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
@@ -49,7 +49,7 @@ if (isset($_SESSION['username'])) {
                     <i class="fa fa-lock icon"></i>
                     <input type="password" placeholder="Password" name="password" class="log-input" required>
                     <br>
-                    <input type="submit" value="Log In" name="signup-btn" class="btn-log">
+                    <input type="submit" value="Se connecter" name="signup-btn" class="btn-log">
                 </form>
             </div>
         </div>
@@ -75,7 +75,7 @@ if (isset($_SESSION['username'])) {
                     <br>
                     <input type="checkbox" name="chkbox" required>J'accepte les termes et conditions
                     <br>
-                    <input type="submit" value="Sign Up" name="signup-btn" class="btn-log">
+                    <input type="submit" value="S'enregistrer" name="signup-btn" class="btn-log">
                 </form>
             </div>
         </div>
@@ -137,6 +137,9 @@ if (isset($_SESSION['username'])) {
                         <li class="nav-item ">
                             <a class="nav-link " href="about.php">Playlists publiques</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="contact.php ">Contact</a>
+                        </li>
                     </ul>
                     <form class="form-inline ">
                         <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
@@ -144,10 +147,10 @@ if (isset($_SESSION['username'])) {
                         </button>
                     </form>
                     <a href="#popup1" class="connexion">
-                    <i class="fa fa-user"></i> Se connecter 
+                        <i class="fa fa-user"></i> Se connecter
                     </a>
                     <a href="#popup2" class="connexion">
-                    <i class="fa fa-user"></i> S'identifier
+                        <i class="fa fa-user"></i> S'identifier
                     </a>
                 </div>
             </nav>

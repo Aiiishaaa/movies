@@ -10,7 +10,7 @@
     $password = $_POST['password'];
 
     //Validation
-    $q = "SELECT * FROM userdata WHERE Username = '$username' OR Email = '$email'";
+    $q = "SELECT * FROM users WHERE Username = '$username' OR Email = '$email'";
 
     $res = $conn->query($q);
     $num = mysqli_num_rows($res);  
@@ -22,7 +22,7 @@
             header('location: ../guest/index.php#error');
         }
     } else {
-        $sql = "INSERT INTO userdata (Username,Password,Fullname,Email,status) values('$username','$password','$fullname','$email','user')";
+        $sql = "INSERT INTO users (Username,Password,Fullname,Email,status) values('$username','$password','$fullname','$email','user')";
 
         $result = $conn -> query($sql);
 

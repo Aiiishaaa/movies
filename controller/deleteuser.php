@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 include('connectdb.php');
 $id=$_REQUEST['id'];
 
-$del = "DELETE  FROM userdata WHERE UserId= '$id'"; 
+$del = "DELETE  FROM users WHERE UserId= '$id'"; 
 $result = $conn -> query($del);
 header("Location: ../admin/users.php"); 
 $conn->close();

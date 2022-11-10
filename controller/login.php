@@ -5,7 +5,7 @@ include('connectdb.php');
     $username = $_POST['username'];
     $password = $_POST['password'];
     //Validation
-    $q = "SELECT * FROM userdata WHERE Username = '$username' && Password = '$password'";
+    $q = "SELECT * FROM users WHERE Username = '$username' && Password = '$password'";
 
     $res = $conn->query($q);
     $num = mysqli_num_rows($res);  

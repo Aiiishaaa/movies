@@ -8,7 +8,7 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Site Metas -->
-    <meta name="keywords" content="Film, playlist,Free streaming, " />
+    <meta name="keywords" content="Film, playlist,Free streaming " />
     <meta name="description" content=" Films en ligne " />
     <meta name="author" content="Aicha Takwa Naïm" />
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
@@ -56,16 +56,17 @@
                             <a class="nav-link " href="contact.php ">Contact<span class="sr-only ">(current)</span></a>
                         </li>
                     </ul>
-                    <div class="user_option ">
-                        <form class="form-inline ">
-                            <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
-                                <i class="fa fa-search "></i>
-                            </button>
-                        </form>
-                        <a href="register.php" class="connexion ">
-                            <i class="fa fa-user "></i>
-                        </a>
-                    </div>
+                    <form class="form-inline ">
+                        <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
+                            <i class="fa fa-search "></i>
+                        </button>
+                    </form>
+                    <a href="#popup1" class="connexion">
+                        <i class="fa fa-user"></i> Se connecter
+                    </a>
+                    <a href="#popup2" class="connexion">
+                        <i class="fa fa-user"></i> S'identifier
+                    </a>
                 </div>
             </nav>
         </div>
@@ -90,13 +91,13 @@
                                 <input type="email" class="form-control" placeholder="Mail" name="email" required />
                             </div>
                             <div>
-                                <input type="text" class="form-control" placeholder="Sujet"name="subject" required>
+                                <input type="text" class="form-control" placeholder="Sujet"name="sujet" required>
                             </div>
                             <div>
                                 <textarea class="form-control" placeholder="Message" name="message" required></textarea>
                             </div>
 
-                            <div class="btn_box offset-lg-4">
+                            <div class="btn offset-lg-4">
                                 <button type="submit">Envoyer </button>
                             </div>
                         </form>

@@ -19,7 +19,7 @@ if (isset($_SESSION['username'])) {
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Site Metas -->
-    <meta name="keywords" content="Film, playlist,Free streaming, " />
+    <meta name="keywords" content="Film, playlist,Free streaming " />
     <meta name="description" content=" Films en ligne " />
     <meta name="author" content="Aicha Takwa Naïm" />
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
@@ -29,10 +29,87 @@ if (isset($_SESSION['username'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/style.css" rel="stylesheet" />
-   
+
 </head>
 
 <body>
+        <!-- Pop up boxes for login and registration -->
+        <div id="popup1" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Se connecter</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <form action="../controller/login.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Username" name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <br>
+                    <input type="submit" value="Se connecter" name="signup-btn" class="btn-log">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup2" class="popup-overlay">
+        <div class="log-popup">
+            <h2>S'identifier</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <form action="../controller/register.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Nom" name="fullname" class="log-input" required>
+                    <br>
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" placeholder="Email" name="email" class="log-input" required>
+                    <br>
+                    <i class="fa fa-link icon"></i>
+                    <input type="text" placeholder="Username" name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <br>
+                    <input type="checkbox" name="chkbox" required>J'accepte les termes et conditions
+                    <br>
+                    <input type="submit" value="S'enregistrer"" name="signup-btn" class="btn-log">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="success" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Bravo!</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Votre compte a été créé avec succès! Merci de vous connecter <i class="fa fa-smile"></i></p>
+                </p>
+                <a href="#popup1" class="btn-main btn-main-primary">
+                    Se connecter
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="error" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Erreur</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Le nom d'utilisateur ou l'adresse électronique existe déjà ! <i class="fa fa-frown"></i></p>
+            </div>
+        </div>
+    </div>
+    <div id="error1" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Erreur</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Compte introuvable !<i class="fa fa-frown"></i></p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End of Pop up boxes for login and registration -->
     <!-- header section strats -->
     <header class="header_section ">
         <div class="container ">
@@ -61,16 +138,17 @@ if (isset($_SESSION['username'])) {
                             <a class="nav-link " href="contact.php ">Contact</a>
                         </li>
                     </ul>
-                    <div class="user_option ">
-                        <form class="form-inline ">
-                            <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
-                                <i class="fa fa-search "></i>
-                            </button>
-                        </form>
-                        <a href="register.php" class="connexion ">
-                            <i class="fa fa-user "></i>
-                        </a>
-                    </div>
+                    <form class="form-inline ">
+                        <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
+                            <i class="fa fa-search "></i>
+                        </button>
+                    </form>
+                    <a href="#popup1" class="connexion">
+                        <i class="fa fa-user"></i> Se connecter
+                    </a>
+                    <a href="#popup2" class="connexion">
+                        <i class="fa fa-user"></i> S'identifier
+                    </a>
                 </div>
             </nav>
         </div>
@@ -83,18 +161,18 @@ if (isset($_SESSION['username'])) {
             <div class="container">
                 <div class="sbox">
                     <div class="row">
-                                <h1 class="offset-lg-3">My Movies : plus de 10K films</h1>
-                                <p class="offset-lg-3">Parcourez notre base de données de films et trouvez votre film préféré</p>
+                        <h1 class="offset-lg-3">My Movies : plus de 10K films</h1>
+                        <p class="offset-lg-3">Parcourez notre base de données de films et trouvez votre film préféré</p>
                     </div>
-                        <div class="container">
-                            <div class="mt-4 row height d-flex justify-content-center align-items-center">
-                                <div class="col-lg-6 col-md-6">
-                                    <form id="searchForm">
-                                        <input type="text" class="searchBox" placeholder="Chercher un film " id="searchText">
-                                    </form>
-                                </div>
+                    <div class="container">
+                        <div class="mt-4 row height d-flex justify-content-center align-items-center">
+                            <div class="col-lg-6 col-md-6">
+                                <form id="searchForm">
+                                    <input type="text" class="searchBox" placeholder="Chercher un film " id="searchText">
+                                </form>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
 
