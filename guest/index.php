@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION['username'])) {
+    if ($_SESSION['status'] == "admin") {
+        header('location: ../admin/index.php');
+    } else {
+        header('location: ../user/index.php');
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -24,7 +36,83 @@
 </head>
 
 <body>
+    <!-- Pop up boxes for login and registration -->
+    <div id="popup1" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Se connecter</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <form action="../controller/login.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Username" name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <br>
+                    <input type="submit" value="Log In" name="signup-btn" class="btn-log">
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <div id="popup2" class="popup-overlay">
+        <div class="log-popup">
+            <h2>S'identifier</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <form action="../controller/register.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Nom" name="fullname" class="log-input" required>
+                    <br>
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" placeholder="Email" name="email" class="log-input" required>
+                    <br>
+                    <i class="fa fa-link icon"></i>
+                    <input type="text" placeholder="Username" name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <br>
+                    <input type="checkbox" name="chkbox" required>J'accepte les termes et conditions
+                    <br>
+                    <input type="submit" value="Sign Up" name="signup-btn" class="btn-log">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="success" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Bravo!</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Votre compte a été créé avec succès! Merci de vous connecter <i class="fa fa-smile"></i></p>
+                </p>
+                <a href="#popup1" class="btn-main btn-main-primary">
+                    Se connecter
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="error" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Erreur</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Le nom d'utilisateur ou l'adresse électronique existe déjà ! <i class="fa fa-frown"></i></p>
+            </div>
+        </div>
+    </div>
+    <div id="error1" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Erreur</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Compte introuvable !<i class="fa fa-frown"></i></p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End of Pop up boxes for login and registration -->
     <!-- header section strats -->
     <header class="header_section ">
         <div class="container ">
@@ -49,33 +137,30 @@
                         <li class="nav-item ">
                             <a class="nav-link " href="about.php">Playlists publiques</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="contact.php">Contact</a>
-                        </li>
                     </ul>
-                    <div class="user_option ">
-                        <form class="form-inline ">
-                            <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
-                                <i class="fa fa-search "></i>
-                            </button>
-                        </form>
-                        <a href="register.php" class="connexion ">
-                            <i class="fa fa-user "></i>
-                        </a>
-                    </div>
+                    <form class="form-inline ">
+                        <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
+                            <i class="fa fa-search "></i>
+                        </button>
+                    </form>
+                    <a href="#popup1" class="connexion">
+                        S'identifier</i>
+                    </a>
+                    <a href="#popup2" class="connexion">
+                        Se connecter
+                    </a>
                 </div>
             </nav>
         </div>
     </header>
     <!-- end header section -->
-
     <!-- start accueil section -->
     <section class="accueil_section">
         <div class="container ">
             <div class="row ">
-                    <div class="img-box col-md-6">
-                        <img src="../images/logoMyMovies.png" alt="">
-                    </div>
+                <div class="img-box col-md-6">
+                    <img src="../images/logoMyMovies.png" alt="">
+                </div>
                 <div class=" col-md-6">
                     <div class="detail-box">
                         <div class="heading_container ">
@@ -96,7 +181,7 @@
                     <div class="ratedMoviesHead mb-4">
                         <h2>Films les mieux notés</h2>
                     </div>
-    
+
                     <!-- The slideshow -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -159,9 +244,9 @@
                 <div class="col-md-4 footer-col ">
                     <div class="footer_detail ">
                         <a href="index.php" class="footer-logo ">
-                        <img src="../images/favicon.ico" alt=" ">
+                            <img src="../images/favicon.ico" alt=" ">
                             <h3>My Movies</h3>
-                            
+
                         </a>
                         <p>Plus de 10K films </p>
                         <div class="footer_social ">
@@ -235,4 +320,5 @@
         getTopMovies();
     </script>
 </body>
+
 </html>
