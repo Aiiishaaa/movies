@@ -22,7 +22,7 @@
             header('location: ../guest/index.php#error');
         }
     } else {
-        $sql = "INSERT INTO userdata (Username,Pass,Fullname,Email,status) values('$username','$password','$fullname','$email','user')";
+        $sql = "INSERT INTO userdata (Username,Password,Fullname,Email,status) values('$username','$password','$fullname','$email','user')";
 
         $result = $conn -> query($sql);
 

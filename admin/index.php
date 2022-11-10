@@ -38,7 +38,7 @@ else{
         <a class="navbar-brand " href="#">
             <img src="../image/icon.png " alt="logo "> MoviesInfo
         </a>
-
+        <a href="../controller/logout.php"> Se déconnecter</a>
         <!-- Links -->
         <ul class="navbar-nav mr-auto ">
         </ul>

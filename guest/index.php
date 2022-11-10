@@ -144,10 +144,10 @@ if (isset($_SESSION['username'])) {
                         </button>
                     </form>
                     <a href="#popup1" class="connexion">
-                        S'identifier</i>
+                    <i class="fa fa-user"></i> Se connecter 
                     </a>
                     <a href="#popup2" class="connexion">
-                        Se connecter
+                    <i class="fa fa-user"></i> S'identifier
                     </a>
                 </div>
             </nav>
