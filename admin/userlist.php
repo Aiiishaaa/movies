@@ -18,7 +18,7 @@ if($result->num_rows > 0) {
             <p> <span style="color: #9a9a9a;">Name: </span> '.$row["Fullname"].'<br>
              <span style="color: #9a9a9a;">Username: </span>'.$row["Username"].'<br>
            <span style="color: #9a9a9a;">Email Address: </span>'.$row["Email"].'<br>
-           <p> <span style="color: #9a9a9a;">Password: </span> '.$row["Pass"].'
+           <p> <span style="color: #9a9a9a;">Password: </span> '.$row["Password"].'
             </p>
         </div>
         <div class="col-md-4 box5">
