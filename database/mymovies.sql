@@ -1,39 +1,44 @@
-
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1
+-- Généré le : jeu. 10 nov. 2022 à 14:20
+-- Version du serveur : 10.4.25-MariaDB
+-- Version de PHP : 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET time_zone  "+00:00";
+SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mymovies'--
+-- Base de données : `mymovies`
+--
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Structure de la table `contact`
 --
 
 CREATE TABLE `contact` (
   `ContactId` int(20) NOT NULL,
-  `ContactName` varchar(50) NOT NULL,
-  `ContactEmail` varchar(100) NOT NULL,
-  `ContactSujet` varchar(200) NOT NULL,
-  `ContactMessage` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=UTF-8;
-
---ContactEmail
--- Dumping data for table `Contact`
---
-
-INSERT INTO `contact` (`ContactId`,`ContactName` `ContactEmail`, `ContactSujet`, `ContactMessage`) VALUES
-(1, 'Aicha', 'Demande de renseignement', 'Bonjour, Merci de me communiquer les étapes de suppressions de compte');
+  `fullname` varchar(50) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Subject` varchar(200) NOT NULL,
+  `Message` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `userdata`
+-- Structure de la table `userdata`
 --
 
 CREATE TABLE `userdata` (
@@ -43,46 +48,50 @@ CREATE TABLE `userdata` (
   `Username` varchar(20) NOT NULL,
   `Password` varchar(50) NOT NULL,
   `status` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=UTF-8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `userdata`
+-- Déchargement des données de la table `userdata`
 --
 
 INSERT INTO `userdata` (`UserId`, `Fullname`, `Email`, `Username`, `Password`, `status`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin@moviesinfo.cf', 'admin'),
-(22, 'aicha', 'aicha', 'Aicha Hamida', 'aicha.hamida@ynov.com', 'user');
+(1, 'admin', 'admin', 'admin', 'admin', 'admin'),
+(24, 'aicha', 'Aicha.hamida06@yahoo.fr', 'aicha', '0000', 'user'),
+(25, 'Lilya', 'Lilya@gmail.com', 'lyly', 'lilya', 'user');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `contact`
+-- Index pour la table `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`ContactId`);
 
 --
--- Indexes for table `userdata`
+-- Index pour la table `userdata`
 --
 ALTER TABLE `userdata`
   ADD PRIMARY KEY (`UserId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `Contact`
+-- AUTO_INCREMENT pour la table `contact`
 --
 ALTER TABLE `contact`
   MODIFY `ContactId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `userdata`
+-- AUTO_INCREMENT pour la table `userdata`
 --
 ALTER TABLE `userdata`
-  MODIFY `UserId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `UserId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
