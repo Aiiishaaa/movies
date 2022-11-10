@@ -1,50 +1,3 @@
-<?php
-  include('../controller/connectdb.php');
-    //Validation
-    
-$sql = "SELECT * FROM contact"; 
-
-$result = $conn->query($sql);
-$list = '';
-$total = $result->num_rows;
-
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while ($row = $result->fetch_assoc()) {
-        $list = $list . '
-        <table class="table table-dark mt-3 ">
-        <thead>
-            <tr>
-            <?php
-            echo $list;
-            ?>
-                <th scope="col">Nom</th>
-                <th scope="col">Email</th>
-                <th scope="col">Sujet</th>
-                <th scope="col">Message</th>
-                <th scope="col">Date</th>    
-            </tr>
-        <tbody>
-            <tr>
-                <td>' . $row["fullname"] . '</td>
-                <td>' . $row["Email"] . '</td>
-                <td>' . $row["subjet"] . '</td>
-                <td>' . $row["Message"] . '</td>
-                <td>' . $row["Date"] . '</td>
-            </tr>
-            </tbody>
-      </table>
-      <a href="updatemessage.php?id=' . $row["ContactId"] . '" class="btn btn-primary">Modifier</a>
-      <a  href="../controller/deletemessage.php?id=' . $row["ContactId"] . '" class="btn btn-danger">Supprimer</a>
-      ';
-    }
-    } else {
-        echo "Il n'y a pas encore de demande via le formulaire de contact !";
-    }
-    $conn->close();
-?>
-
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -107,51 +60,54 @@ if ($result->num_rows > 0) {
         <div class="container">
             <h1 class="contact_taital">Demandes des utilisateurs</h1>
             <div class="row">
-                <div class="col-md-12">
-                    <div class="full">
-                        <div class="heading_main text_align_center">
-                            <h2><span class="theme_color"></span> </h2>
-                        </div>
-                    </div>
-                </div>
+                <?php
+  include('../controller/connectdb.php');
+                $sql = "SELECT * FROM contact";
+
+                $result = $conn->query($sql);
+                $list = '';
+                $total = $result->num_rows;
+
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    if ($row = $result->fetch_assoc()) {
+                        $list = $list;
+                        $list = $list . '<div class="col-md-6 col-lg-4">
+        <table class="table table-dark mt-3 ">
+        <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Sujet</th>
+                <th scope="col">Message</th>
+                <th scope="col">Date</th>
+            </tr>
+        <tbody>
+            <tr>
+                <td>' . $row["fullname"] . '</td>
+                <td>' . $row["email"] . '</td>
+                <td>' . $row["Sujet"] . '</td>
+                <td>' . $row["message"] . '</td>
+                <td>' . $row["date"] . '</td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="updatemoviesrequest.php?id=' . $row["Contactid"] . '" class="btn btn-primary">Modifier</a>
+        <a  href="../controller/deletemoviesrequest.php?id=' . $row["ContactOd"] . '" class="btn btn-danger">Supprimer</a>
+        ';
+                    }
+                } else {
+                    echo "Il n'y a pas encore de demande via le formulaire de contact !";
+                }
+                $conn->close();
+                ?>
+                </tbody>
+                </table>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="full">
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Nom</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Sujet</th>
-                                        <th scope="col">Message</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    if($result->num_rows > 0) {
-                                        while($row = $result->fetch_assoc()) {
-                                            echo "<tr>";
-                                            echo "<td>" . $row['fullname'] . "</td>";
-                                            echo "<td>" . $row['email'] . "</td>";
-                                            echo "<td>" . $row['Subject'] . "</td>";
-                                            echo "<td>" . $row['message'] . "</td>";
-                                            echo "<td><a href='../controller/delete.php?id=" . $row['id'] . "' title='Delete Record' data-toggle='tooltip'><span class='fa fa-trash'></span></a></td>";
-                                            echo "</tr>";
-                                        }
-                                    } else {
-                                        echo "<tr>";
-                                        echo "<td colspan='4'>" . $list . "</td>";
-                                        echo "</tr>";
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
+        </div>
+        </div>
         </div>
 
     </section>
@@ -166,4 +122,5 @@ if ($result->num_rows > 0) {
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
