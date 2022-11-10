@@ -75,7 +75,7 @@
     </div>
     <div class="container">
         <div class="container main-review">
-            <h3 class="title-second review-text">Critique du film </h2>
+            <h3 class="title-second review-text">Critique du film </h3>
             <div id="reviews"></div>
         </div>    
     </div>

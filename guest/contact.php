@@ -69,7 +69,6 @@
                 </div>
             </nav>
         </div>
-        </div>
     </header>
     <!-- end header section -->
 
@@ -77,9 +76,7 @@
     <section class="contact_section">
         <div class="container">
             <div class="row">
-                <div class="offset-lg-2 col-md-6 col-lg">
-                    <img src="../images/logoMyMovies.png" alt="">
-                </div>
+                    <img class="offset-lg-2 col-md-6 col-lg" src="../images/logoMyMovies.png" alt="">
                 <div class="col-md-6 col-lg-6">
                     <h2>
                         Nous contacter
@@ -121,7 +118,7 @@
                         </h4>
                         <div class="contact_link_box ">
 
-                            <a href=" ">
+                            <a href="">
                                 <i class="fa fa-phone " aria-hidden="true "></i>
                                 <span>
                                     06.00.00.00.00
