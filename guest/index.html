@@ -1,15 +1,4 @@
-<?php
-session_start();
-if (isset($_SESSION['username'])) {
-    if ($_SESSION['status'] == "admin") {
-        header('location: ../admin/index.php');
-    } else {
-        header('location: ../user/index.php');
-    }
-}
-?>
 <!DOCTYPE html>
-
 <html lang="fr-FR">
 
 <head>
@@ -24,19 +13,18 @@ if (isset($_SESSION['username'])) {
     <meta name="author" content="Aicha Takwa Naïm" />
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
     <title> My Movies </title>
-    <!--owl slider stylesheet -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <!-- nice select  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
-    <!-- font awesome style -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
     <link href="../css/style.css" rel="stylesheet" />
-    <link href="../css/bootstrap.css" rel="stylesheet" />
+
 </head>
 
 <body>
+
     <!-- header section strats -->
     <header class="header_section ">
         <div class="container ">
@@ -82,42 +70,69 @@ if (isset($_SESSION['username'])) {
     </header>
     <!-- end header section -->
 
-    <!--  start category section -->
-    <section class="browse-section">
-        <div class="container-fluid">
-            <div class="container">
-                <div class="sbox">
-
-                    <div>
-                        <center>
-                            <div class="content">
-                                <h1>My Movies : plus de 10K films</h1>
-                                <p>Parcourez notre base de données de films et trouvez votre film préféré</p>
-
-                            </div>
-                        </center>
-                        <div class="container">
-                            <div class="mt-4 mb-3 row height d-flex justify-content-center align-items-center">
-                                <div class=" offset-lg-3 col-lg-6 col-md-6">
-                                    <form id="searchForm">
-                                        <input type="text" class="searchBox" placeholder="Chercher un film " id="searchText">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
+    <!-- start about section -->
+    <section class="about_section">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-6 ">
+                    <div class="img-box">
+                        <img src="../images/logoMyMovies.png" alt="">
                     </div>
                 </div>
-            </div>
+                <div class=" col-md-6">
+                    <div class="detail-box">
+                        <div class="heading_container ">
+                            <h1>
+                                My Movies </h1>
+                            <p>
+                                C'est un site où vous pouvez consulter des informations sur votre film préféré et créer vos propres playlists </p>
+                            <p> Movies est surtout connu pour l'excellente qualité de ses films.</p>
+                            </p>
+                            <div class="btn-box offset-lg-3">
+                                <a href="browser.php" class="btn">
+                                    Parcourez les films </a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="demo" class="carousel slide container mt-4 mb-3" data-ride="carousel">
+                    <div class="ratedMoviesHead mb-4">
+                        <h2>Films les mieux notés</h2>
+                    </div>
+    
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div id="topMovies1" class="row"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="topMovies2" class="row"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="topMovies3" class="row"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="topMovies4" class="row"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="topMovies5" class="row"></div>
+                        </div>
+                    </div>
 
-            <div class="container">
-                <div id="movies" class="row"></div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
             </div>
         </div>
-
-
-
     </section>
+
+    <!-- end about section -->
 
     <!-- footer section -->
     <footer class="footer_section ">
@@ -147,23 +162,21 @@ if (isset($_SESSION['username'])) {
                 </div>
                 <div class="col-md-4 footer-col ">
                     <div class="footer_detail ">
-                        <a href=" " class="footer-logo ">
+                        <a href="index.php" class="footer-logo ">
+                            <img src="../images/favicon.ico" alt=" ">
                             <h4>My Movies</h4>
                         </a>
                         <p>
                             Plus de 10K films </p>
                         <div class="footer_social ">
                             <a href=" ">
-                                <i class="fa fa-facebook " aria-hidden="true "></i>
+                                <i class="fa-brands fa-facebook"></i>
                             </a>
                             <a href=" ">
-                                <i class="fa fa-twitter " aria-hidden="true "></i>
+                                <i class="fa-brands fa-instagram"></i>
                             </a>
                             <a href=" ">
-                                <i class="fa fa-linkedin " aria-hidden="true "></i>
-                            </a>
-                            <a href=" ">
-                                <i class="fa fa-instagram " aria-hidden="true "></i>
+                                <i class="fa-brands fa-twitter"></i>
                             </a>
                         </div>
                     </div>
@@ -207,20 +220,24 @@ if (isset($_SESSION['username'])) {
     </footer>
     <!-- footer section -->
 
-    <!-- jQuery library -->
+    <!-- jQery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous ">
+    </script>
+    <!-- bootstrap js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
+    <!-- custom js -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js ">
+    </script>
+    <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js "></script>
+    <!-- main js -->
     <script src="../js/main.js"></script>
     <script>
-        popularMovies();
+        getTopMovies();
     </script>
 </body>
 
