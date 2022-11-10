@@ -109,37 +109,38 @@ if (isset($_POST['update'])) {
         <div class="row">
             <div class="col-md-12">
                 <form class="main_form" action="" method="post">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Nom complet" type="text" name="fname" value="<?php echo $row['Fullname']; ?>">
-                        </div>
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Email" type="email" name="email" value="<?php echo $row['Email']; ?>">
-                        </div>
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Nom d'utilisateur" type="text" name="username" value="<?php echo $row['Username']; ?>">
-                        </div>
-                        <div class="col-md-12">
-                            <input class="contactus" placeholder="Mot de passe" type="text" name="password" value="<?php echo $row['Password']; ?>">
-                        </div>
-                        <div class="col-md-12 mt-3">
-                            <button class="send_btn btn-primary" type="submit" name="update">Modifier</button>
-                        </div>
-                    </div>
+                    <table class="table table-dark">
+                        <tr>
+                            <td>Nom complet</td>
+                            <td><input type="text" name="fname" value="<?php echo $row['Fullname']; ?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="email" name="email" value="<?php echo $row['Email']; ?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td><input type="text" name="username" value="<?php echo $row['Username']; ?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>Mot de passe</td>
+                            <td><input type="password" name="password" value="<?php echo $row['Password']; ?>" required></td>
+                        </tr>
+                    </table>
+                    <button type="submit" name="update" class="btn btn-primary">Sauvegarder</button>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

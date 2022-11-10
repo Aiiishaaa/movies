@@ -60,8 +60,8 @@ include('../controller/connectdb.php');
 
     <!-- contact section -->
     <section class="contact-section">
-        <div class="container">
-            <h1 class="contact_taital">Demandes des utilisateurs</h1>
+        <div class="container mt-4">
+            <h2 class="contact_taital mt-4">Demandes des utilisateurs</h2>
             <div class="row">
                 <?php
                 $sql = "SELECT * FROM contact";
