@@ -74,6 +74,8 @@
     <section class="section_movie">
         <div class="container">
             <div id="movie" class="row"></div>
+            <button class="btn btn-primary mt-4" id="addReview">Ajouter au playlist</button>
+
             <div class="main-review mt-5">
                 <h3 class="title-second review-text mt-5">Critique du film </h3>
                 <div id="reviews"></div>

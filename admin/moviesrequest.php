@@ -1,3 +1,6 @@
+<?php
+include('../controller/connectdb.php');
+?>
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -61,53 +64,45 @@
             <h1 class="contact_taital">Demandes des utilisateurs</h1>
             <div class="row">
                 <?php
-  include('../controller/connectdb.php');
                 $sql = "SELECT * FROM contact";
 
                 $result = $conn->query($sql);
                 $list = '';
                 $total = $result->num_rows;
 
-
                 if ($result->num_rows > 0) {
-                    // output data of each row
                     if ($row = $result->fetch_assoc()) {
-                        $list = $list;
-                        $list = $list . '<div class="col-md-6 col-lg-4">
-        <table class="table table-dark mt-3 ">
-        <thead>
-            <tr>
-                <th scope="col">Nom</th>
-                <th scope="col">Email</th>
-                <th scope="col">Sujet</th>
-                <th scope="col">Message</th>
-                <th scope="col">Date</th>
-            </tr>
-        <tbody>
-            <tr>
-                <td>' . $row["fullname"] . '</td>
-                <td>' . $row["email"] . '</td>
-                <td>' . $row["Sujet"] . '</td>
-                <td>' . $row["message"] . '</td>
-                <td>' . $row["date"] . '</td>
-            </tr>
-            </tbody>
-        </table>
-        <a href="updatemoviesrequest.php?id=' . $row["Contactid"] . '" class="btn btn-primary">Modifier</a>
-        <a  href="../controller/deletemoviesrequest.php?id=' . $row["ContactOd"] . '" class="btn btn-danger">Supprimer</a>
-        ';
+                        $list = $list .
+                            '<table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Sujet</th>
+                                    <th scope="col">Message</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>';
+                        $list = $list . '<tr>
+                                    <td>' . $row['fullname'] . '</td>
+                                    <td>' . $row['Email'] . '</td>
+                                    <td>' . $row['Sujet'] . '</td>
+                                    <td>' . $row['Message'] . '</td>
+                                    <td>' . $row['Date'] . '</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <a href="delete.php?id=' . $row['ContactId'] . '" class="btn btn-danger">Supprimer</a>';
+
                     }
                 } else {
-                    echo "Il n'y a pas encore de demande via le formulaire de contact !";
+                    echo "Il n'y a pas de demandes via le formulaire de contact";
                 }
-                $conn->close();
+
+                echo $list;
                 ?>
-                </tbody>
-                </table>
             </div>
-        </div>
-        </div>
-        </div>
         </div>
 
     </section>

@@ -216,6 +216,12 @@
             width: 100%;
             border-collapse: collapse;
         }
+        /* section user */
+        
+        body {
+            background-color: #000
+        }
+        /*end user section*/
         /* footer section*/
         
         .footer_section {

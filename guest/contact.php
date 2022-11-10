@@ -26,7 +26,83 @@
 </head>
 
 <body>
+    <!-- Pop up boxes for login and registration -->
+    <div id="popup1" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Se connecter</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <form action="../controller/login.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Username" name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <br>
+                    <input type="submit" value="Se connecter" name="signup-btn" class="btn-log">
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <div id="popup2" class="popup-overlay">
+        <div class="log-popup">
+            <h2>S'identifier</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <form action="../controller/register.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Nom" name="fullname" class="log-input" required>
+                    <br>
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" placeholder="Email" name="email" class="log-input" required>
+                    <br>
+                    <i class="fa fa-link icon"></i>
+                    <input type="text" placeholder="Username" name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <br>
+                    <input type="checkbox" name="chkbox" required>J'accepte les termes et conditions
+                    <br>
+                    <input type="submit" value="S'enregistrer" name="signup-btn" class="btn-log">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="success" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Bravo!</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Votre compte a été créé avec succès! Merci de vous connecter <i class="fa fa-smile"></i></p>
+                </p>
+                <a href="#popup1" class="btn-main btn-main-primary">
+                    Se connecter
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="error" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Erreur</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Le nom d'utilisateur ou l'adresse électronique existe déjà ! <i class="fa fa-frown"></i></p>
+            </div>
+        </div>
+    </div>
+    <div id="error1" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Erreur</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Compte introuvable !<i class="fa fa-frown"></i></p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End of Pop up boxes for login and registration -->
 
     <!-- header section strats -->
     <header class="header_section ">
@@ -91,7 +167,7 @@
                                 <input type="email" class="form-control" placeholder="Mail" name="email" required />
                             </div>
                             <div>
-                                <input type="text" class="form-control" placeholder="Sujet"name="sujet" required>
+                                <input type="text" class="form-control" placeholder="Sujet" name="sujet" required>
                             </div>
                             <div>
                                 <textarea class="form-control" placeholder="Message" name="message" required></textarea>
