@@ -200,6 +200,22 @@
             z-index: 1;
         }
         /*end accueil section*/
+        /*admin section*/
+        
+        .admin_section {
+            padding: 200px 0 300px 0;
+            background-color: #000000;
+            color: #000000;
+            background-image: url(../images/backgroundadmin.png);
+            background-size: cover;
+            width: 100%;
+            height: 300%;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
         /* footer section*/
         
         .footer_section {

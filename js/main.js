@@ -1,38 +1,3 @@
-const container = document.querySelector(".formulaire"),
-    pwShowHide = document.querySelectorAll(".showHidePw"),
-    pwFields = document.querySelectorAll(".password"),
-    signUp = document.querySelector(".signup-link"),
-    login = document.querySelector(".login-link");
-
-//   js code to show/hide password and change icon
-pwShowHide.forEach((eyeIcon) => {
-    eyeIcon.addEventListener("click", () => {
-        pwFields.forEach((pwField) => {
-            if (pwField.type === "password") {
-                pwField.type = "text";
-
-                pwShowHide.forEach((icon) => {
-                    icon.classList.replace("uil-eye-slash", "uil-eye");
-                });
-            } else {
-                pwField.type = "password";
-
-                pwShowHide.forEach((icon) => {
-                    icon.classList.replace("uil-eye", "uil-eye-slash");
-                });
-            }
-        });
-    });
-});
-
-// js code to appear signup and login form
-signUp.addEventListener("click", () => {
-    container.classList.add("active");
-});
-login.addEventListener("click", () => {
-    container.classList.remove("active");
-});
-
 $(document).ready(() => {
     $("#searchForm").on("input", (e) => {
         let searchText = $("#searchText").val();
@@ -87,7 +52,7 @@ function popularMovies() {
 
 function getMovies(searchText) {
     axios.get(
-        "https://api.themoviedb.org/3/search/movie?api_key=5ec279387e9aa9488ef4d00b22acc451&query=" +
+        "https://api.themoviedb.org/5/search/movie?api_key=5ec279387e9aa9488ef4d00b22acc451&query=" +
         searchText
     );
     axios
@@ -211,7 +176,7 @@ function getMovie() {
                 <div class="col-lg-3 col-md-4">
                     <img src="${poster}" class="poster-image">
                 </div>
-                <div class="col-lg-3 mt-5">
+                <div class="col-lg-3">
                     <h2 class="movie-title">${movie.title}</h2>
                     <ul class="list-group box-details">
                          <li class="list-group-item active">
@@ -233,9 +198,8 @@ function getMovie() {
                     <h3 class="title-second">Résumé</h3>
                     <p>${movie.overview}</p>
                     <div >
-                        <a href="http://imdb.com/title/${movie.imdb_id}" target="_blank" class="btn-one">View IMDB</a>
-                        <!-- <a href="http://imdb.com/title/${movie.imdb_id}" target="_blank" class="btn-info">View IMDB</a> -->
-                        <a href="browse.php" class="btn-second">Voir le catalogue</a>
+                        <a href="http://imdb.com/title/${movie.imdb_id}" target="_blank" class="connexion">Voir sur IMDB</a>
+                        <a href="browse.php" class="connexion">Voir le catalogue</a>
                     </div>
                 </div>
             </div>

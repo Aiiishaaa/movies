@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 10 nov. 2022 à 14:20
+-- Généré le : jeu. 10 nov. 2022 à 22:02
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -28,20 +28,28 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `contact` (
-  `ContactId` int(20) NOT NULL,
+   `ContactId` int(20) NOT NULL,
   `fullname` varchar(50) NOT NULL,
   `Email` varchar(100) NOT NULL,
-  `Subject` varchar(200) NOT NULL,
-  `Message` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Sujet` varchar(200) NOT NULL,
+  `Message` varchar(2000) DEFAULT NULL,
+  `Date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`ContactId`, `fullname`, `Email`, `Sujet`, `Message`, `Date`) VALUES
+(1, 'Aicha Hamida', 'aicha.hamida@ynov.com', 'Demande de renseignements', '        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus delectus mollitia eaque ducimus dolore nobis architecto. Tempora aliquam nihil minima vitae recusandae velit illo. Quod ', '2022-11-10 20:59:37');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `userdata`
+-- Structure de la table `users`
 --
 
-CREATE TABLE `userdata` (
+CREATE TABLE `users` (
   `UserId` int(50) NOT NULL,
   `Fullname` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
@@ -51,13 +59,12 @@ CREATE TABLE `userdata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `userdata`
+-- Déchargement des données de la table `users`
 --
 
-INSERT INTO `userdata` (`UserId`, `Fullname`, `Email`, `Username`, `Password`, `status`) VALUES
+INSERT INTO `users` (`UserId`, `Fullname`, `Email`, `Username`, `Password`, `status`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin', 'admin'),
-(24, 'aicha', 'Aicha.hamida06@yahoo.fr', 'aicha', '0000', 'user'),
-(25, 'Lilya', 'Lilya@gmail.com', 'lyly', 'lilya', 'user');
+(2, 'aicha', 'Aicha.hamida06@yahoo.fr', 'aicha', '0000', 'user');
 
 --
 -- Index pour les tables déchargées
@@ -70,9 +77,9 @@ ALTER TABLE `contact`
   ADD PRIMARY KEY (`ContactId`);
 
 --
--- Index pour la table `userdata`
+-- Index pour la table `users`
 --
-ALTER TABLE `userdata`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`UserId`);
 
 --
@@ -80,15 +87,9 @@ ALTER TABLE `userdata`
 --
 
 --
--- AUTO_INCREMENT pour la table `contact`
+-- AUTO_INCREMENT pour la table `users`
 --
-ALTER TABLE `contact`
-  MODIFY `ContactId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT pour la table `userdata`
---
-ALTER TABLE `userdata`
+ALTER TABLE `users`
   MODIFY `UserId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
