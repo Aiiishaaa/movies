@@ -1,111 +1,96 @@
-<?php
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1
+-- Généré le : jeu. 10 nov. 2022 à 13:42
+-- Version du serveur : 10.4.25-MariaDB
+-- Version de PHP : 8.1.10
 
-session_start();
-if (!isset($_SESSION['username'])) {
-    header('location: ../guest/index.php');
-}
-else{ 
-    if ($_SESSION['status'] != "admin") {
-        header('location: ../user/index.php');
-    }
-}
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
-?>
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-<!DOCTYPE html>
-<html lang="en">
+--
+-- Base de données : `mymovies`
+--
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to MoviesInfo</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet'>
+-- --------------------------------------------------------
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel=" stylesheet " href="../css/bootstrap.min.css ">
+--
+-- Structure de la table `contact`
+--
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/popup.css">
+CREATE TABLE `contact` (
+  `ContactId` int(20) NOT NULL,
+  `fullname` varchar(50) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Subject` varchar(200) NOT NULL,
+  `Message` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-</head>
+-- --------------------------------------------------------
 
-<body>
-    <nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
-        <!-- Brand/logo -->
-        <a class="navbar-brand " href="#">
-            <img src="../image/icon.png " alt="logo "> MoviesInfo
-        </a>
+--
+-- Structure de la table `userdata`
+--
 
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto ">
-        </ul>
-        <!-- Links -->
-        <ul class="navbar-nav ">
-            <li class="nav-item ">
-                <a class="nav-link active " href="# ">Home</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link " href="users.php">Manage Users</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="moviesrequest.php">Movies Request</a>
-            </li>
-            <li class="nav-item dropdown dropleft">
-                <a class="nav-link" href="#" data-toggle="dropdown">
-                    <img src="../image/default-user.png" style="width:30px; border-radius:50%;" alt="logo ">
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item disabled" style="color:silver; text-transform:lowercase;" href="#"><?php echo $_SESSION['username'] ?></a>
-                    <a class="dropdown-item" style="color:#fff;" href="../controller/logout.php">Log Out</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
+CREATE TABLE `userdata` (
+  `UserId` int(50) NOT NULL,
+  `Fullname` varchar(50) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Username` varchar(20) NOT NULL,
+  `Password` varchar(50) NOT NULL,
+  `status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-    <header>
-        <div class="container body ">
-            <center>
-                <div class=" inner-body ">
-                    <h1 class="title ">Welcome to
-                        <span style="color: #6AC045;">Admin Panel</span>
-                    </h1>
-                    <p style="color: white" class="content">
-                        Welcome to
-                        <span style="font-weight:bold; color: #6AC045">MoviesInfo</span> | It is site where you can view information about your favourite movie. MoviesInfo
-                        are best known for the excellent
-                        <span style="font-weight:bold; color: #6AC045">Information</span> for each and every released and not released movies. We are providing this information
-                        by the help of
-                        <span style="font-weight:bold; color: #6AC045">MovieDB </span> which known for their movies resources.
-                        <span style="font-weight:bold; color: #6AC045">Browse</span> Movie and get detail aspect of your favourite movie.
-                    </p>
-                </div>
-                <div class="container">
-                    <a href="moviesrequest.php" class="btn-main btn-main-primary">
-                        Movies Request List
-                    </a>
-                    <a href="users.php" class="btn-main ">
-                        Manage Users
-                    </a>
-                </div>
+--
+-- Déchargement des données de la table `userdata`
+--
 
-            </center>
-        </div>
-    </header>
+INSERT INTO `userdata` (`UserId`, `Fullname`, `Email`, `Username`, `Password`, `status`) VALUES
+(1, 'admin', 'admin', 'admin', 'admin', 'admin'),
+(22, 'aicha', 'aicha', 'Aicha Hamida', 'aicha.hamida@ynov.com', 'user');
 
-    <div class="footer">
-        <p>&copy; Copyright Developed by Genius Coders.</p>
-    </div>
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+--
+-- Index pour les tables déchargées
+--
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+--
+-- Index pour la table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`ContactId`);
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-</body>
+--
+-- Index pour la table `userdata`
+--
+ALTER TABLE `userdata`
+  ADD PRIMARY KEY (`UserId`);
 
-</html>
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `ContactId` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `userdata`
+--
+ALTER TABLE `userdata`
+  MODIFY `UserId` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
