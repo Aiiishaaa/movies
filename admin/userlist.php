@@ -1,7 +1,7 @@
 <?php
 include('../controller/connectdb.php');
 //Validation
-$sql = "SELECT * FROM users WHERE status not like 'admin'";
+$sql = "SELECT * FROM user WHERE status not like 'admin'";
 
 $result = $conn->query($sql);
 $list = '';
@@ -30,8 +30,8 @@ if ($result->num_rows > 0) {
             </tr>
             </tbody>
       </table>
-      <a href="updateuser.php?id=' . $row["UserId"] . '" class="btn btn-primary">Modifier</a>
-      <a  href="../controller/deleteuser.php?id=' . $row["UserId"] . '" class="btn btn-danger">Supprimer</a>
+      <a href="updateuser.php?id=' . $row["user_id"] . '" class="btn btn-primary">Modifier</a>
+      <a  href="../controller/deleteuser.php?id=' . $row["user_id"] . '" class="btn btn-danger">Supprimer</a>
       ';
     }
 } else {

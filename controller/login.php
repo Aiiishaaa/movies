@@ -1,11 +1,12 @@
 <?php
 session_start();
 include('connectdb.php');
+include('checkInput.php');
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = checkInput($_POST['username']);
+    $password = checkInput($_POST['password']);
     //Validation
-    $q="SELECT * from users where username='".$username."' and password='".$password."' LIMIT 1";
+    $q="SELECT * from user where username='".$username."' and password='".$password."' LIMIT 1";
 
     // $q = "SELECT * FROM users WHERE username = '$username' && password = '$password'";
     $db = config::getConnexion();

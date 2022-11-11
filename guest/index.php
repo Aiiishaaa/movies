@@ -8,31 +8,29 @@ if (isset($_SESSION['username'])) {
     }
 }
 ?>
-
-
-<!DOCTYPE html>
-<html lang="fr-FR">
-
-<head>
-    <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Site Metas -->
-    <meta name="keywords" content="Film, playlist,Free streaming " />
-    <meta name="description" content=" Films en ligne " />
+    <meta name="keywords" content="Film, playlist,streaming, cinéma, synopsys, movies" />
     <meta name="author" content="Aicha Takwa Naïm" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films,  résumé et bande-annonce.">
+    <meta property="og:type" content="Mymovies">
+    <meta property="og:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
+    <meta property="og:site_name" content="Mymovies">
+    <meta property="og:url" content="https://mymovies.fr">
+    <meta property="og:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce.">
+    <meta property="og:image" content="https://mymovies.fr/logo.jpg">
+    <meta property="twitter:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
+    <meta property="twitter:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce.">
+    <meta property="twitter:site" content="@mymovies">
+    <meta property="twitter:creator" content="@mymovies">
+    <meta property="twitter:card" content="Summary_large_image">
+    <meta property="twitter:image:src" content="https://mymovies.fr/logo.jpg">
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
-    <title> My Movies </title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
     <!-- Custom styles for this template -->
     <link href="../css/style.css" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -57,7 +55,7 @@ if (isset($_SESSION['username'])) {
 
     <div id="popup2" class="popup-overlay">
         <div class="log-popup">
-            <h2>S'identifier</h2>
+            <h2>Créer un compte</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
                 <form action="../controller2/register.php" method="post">
@@ -116,7 +114,7 @@ if (isset($_SESSION['username'])) {
     <!-- header section strats -->
     <header class="header_section ">
         <div class="container ">
-            <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <nav class="navbar navbar-expand-lg custom_nav-container aria-label="Breadcrumb">
                 <a class="navbar-brand" href="index.php">
                     <span>
                         My Movies
@@ -129,13 +127,13 @@ if (isset($_SESSION['username'])) {
                 <div class="collapse navbar-collapse " id="navbarSupportedContent ">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item active ">
-                            <a class="nav-link " href="index.php">Accueil <span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="index.php"><span class="sr-only ">Accueil</span></a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link " href="browse.php">Catalogue</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="about.php">Playlists publiques</a>
+                            <a class="nav-link " href="playlistP.php">Playlists publiques</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="contact.php ">Contact</a>
@@ -150,7 +148,7 @@ if (isset($_SESSION['username'])) {
                         <i class="fa fa-user"></i> Se connecter
                     </a>
                     <a href="#popup2" class="connexion">
-                        <i class="fa fa-user"></i> S'identifier
+                        <i class="fa fa-user"></i> Créer un compte
                     </a>
                 </div>
             </nav>
@@ -162,7 +160,7 @@ if (isset($_SESSION['username'])) {
         <div class="container ">
             <div class="row ">
                 <div class="img-box col-md-6">
-                    <img src="../images/logoMyMovies.svg" alt="">
+                    <img src="../images/logoMyMovies.svg" loading="lazy" data-src="logoMyMovies.svg" alt="logo_mymovies">
                 </div>
                 <div class=" col-md-6">
                     <div class="detail-box">
@@ -319,6 +317,7 @@ if (isset($_SESSION['username'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js "></script>
     <!-- main js -->
     <script src="../js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
     <script>
         getTopMovies();
     </script>

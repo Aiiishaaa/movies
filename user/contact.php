@@ -1,13 +1,8 @@
+
 <?php
 
 session_start();
-if (!isset($_SESSION['username'])) {
-    header('location: ../guest/index.php');
-} else {
-    if ($_SESSION['status'] != "admin") {
-        header('location: ../user/index.php');
-    }
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
@@ -24,15 +19,21 @@ if (!isset($_SESSION['username'])) {
     <meta name="author" content="Aicha Takwa Naïm" />
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
     <title> My Movies </title>
+    <!--owl slider stylesheet -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- nice select  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <!-- Custom styles for this template -->
     <link href="../css/style.css" rel="stylesheet" />
 </head>
+
 <body>
 
+    <!-- header section strats -->
     <header class="header_section ">
         <div class="container ">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -48,50 +49,79 @@ if (!isset($_SESSION['username'])) {
                 <div class="collapse navbar-collapse " id="navbarSupportedContent ">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item active ">
-                            <a class="nav-link " href="index.php"><span class="sr-only ">Accueil</span></a>
+                            <a class="nav-link " href="index.php">Données personnelles</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="users.php"> Gestion des utilisateurs</a>
+                            <a class="nav-link " href="browse.php">Catalogue</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="moviesrequest.php"> Demandes des utilisateurs</a>
+                            <a class="nav-link " href="playlist.php">Playlists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="contact.php "><span class="sr-only ">Contact</span></a>
                         </li>
                     </ul>
+                    <form class="form-inline ">
+                        <button class="btn my-2 my-sm-0 nav_search-btn " type="submit ">
+                            <i class="fa fa-search "></i>
+                        </button>
+                    </form>
                     <form class="form-inline my-2 my-lg-0 ">
                         <a href="../controller/logout.php" class="btn my-2 connexion my-sm-0 mr-3" type="submit">Se déconnecter</a>
-                    </form> 
+                    </form>
                 </div>
             </nav>
         </div>
     </header>
- <!-- End header section -->
-    <section class="admin_section">
-        <div class="container ">
-            <div class="row ">
-                <div class="col-md-12 ">
-                    <div class="admin_content">
-                        <h2> Bienvenue <?php echo $_SESSION['username']; ?> </h2>
-                        <p> Vous êtes connecté en tant qu'administrateur </p>
-                    </div>
-            </div>
+    <!-- end header section -->
 
-        </div>
+    <!-- contact section -->
+    <section class="contact_section">
+        <div class="container">
+            <div class="row">
+                <img class="col-md-6 col-lg-4" src="../images/logoMyMovies.png" alt="">
+                <div class="col-md-6 col-lg-6 offset-lg-1">
+                    <h2>
+                        Nous contacter
+                    </h2>
+                    <div class="form_container">
+                        <form action="../controller/req.php" method="post">
+                            <div>
+                                <input type="text" class="form-control" placeholder="Nom complet" name="fullname" required />
+                            </div>
+                            <div>
+                                <input type="email" class="form-control" placeholder="Mail" name="email" required />
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Sujet" name="sujet" required>
+                            </div>
+                            <div>
+                                <textarea class="form-control" placeholder="Message" name="message" required></textarea>
+                            </div>
+
+                            <div class="btn offset-lg-4">
+                                <button type="submit">Envoyer </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- end  section -->
+    <!-- end contact section -->
 
     <!-- footer section -->
     <footer class="footer_section ">
         <div class="container ">
             <div class="row ">
-                <div class="col-md-4 footer-col ">
+                <div class="col-md-4 footer-col">
                     <div class="footer_contact ">
                         <h4>
                             Contactez-nous
                         </h4>
                         <div class="contact_link_box ">
 
-                            <a href=" ">
+                            <a href="">
                                 <i class="fa fa-phone " aria-hidden="true "></i>
                                 <span>
                                     06.00.00.00.00
@@ -110,10 +140,10 @@ if (!isset($_SESSION['username'])) {
                     <div class="footer_detail ">
                         <a href="index.php" class="footer-logo ">
                             <img src="../images/favicon.ico" alt=" ">
-                            <h3>My Movies</h3>
-
+                            <h4>My Movies</h4>
                         </a>
-                        <p>Plus de 10K films </p>
+                        <p>
+                            Plus de 10K films </p>
                         <div class="footer_social ">
                             <a href=" ">
                                 <i class="fa-brands fa-facebook"></i>
@@ -158,19 +188,16 @@ if (!isset($_SESSION['username'])) {
                                     Plan du site
                                 </a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
             </div>
     </footer>
     <!-- footer section -->
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

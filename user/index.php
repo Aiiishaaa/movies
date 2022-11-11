@@ -1,23 +1,58 @@
-<?php
-
+<?php 
 session_start();
+/*fonction qui supprime les tanbulations, sauts de ligne et retours à la ligne */
+function ob_html_compress($buf){
+    return str_replace(array("\n","\r","\t"),'',$buf);
+}
 
+ob_start('ob_html_compress');
+?>
+<?php 
+$langs = array(
+	"fr" => "mymovies.fr",
+	"en" => "mymovies.com",
+	"es" => "mymovies.es",
+	"de" => "mymovies.de"
+);
+
+if(isset($_GET['lang']) && isset($langs[$_GET['lang']])){
+	$current_lang = $_GET['lang'];
+	$current_url = $langs[$current_lang];
+} else {
+	$current_lang = "fr";
+	$current_url = "mymovies.fr";
+}
+if(isset($langs[$current_lang])) unset($langs[$current_lang]);
 ?>
 <!DOCTYPE html>
-<html lang="fr-FR">
-
+<html lang="<?= $current_lang; ?>">
 <head>
-    <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Site Metas -->
-    <meta name="keywords" content="Film, playlist,Free streaming" />
-    <meta name="description" content=" Films en ligne " />
+  <meta charset="UTF-8">
+  <title> My Movies</title>
+    <?php
+    foreach($langs as $lang => $url){
+      echo'<link rel="alternate" href="'.$url.'" hreflang="'.$lang.'">';
+    }
+    ?>
+    <link rel="canonical" href="<?= $current_url; ?>">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="keywords" content="Film, playlist,streaming, cinéma, synopsys, movies" />
     <meta name="author" content="Aicha Takwa Naïm" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce. Regardez également votre film préféré en streaming.">
+    <meta property="og:type" content="Mymovies">
+    <meta property="og:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
+    <meta property="og:site_name" content="Mymovies">
+    <meta property="og:url" content="https://mymovies.fr">
+    <meta property="og:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce. Regardez également votre film préféré en streaming.">
+    <meta property="og:image" content="https://mymovies.fr/logo.jpg">
+    <meta property="twitter:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
+    <meta property="twitter:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce. Regardez également votre film préféré en streaming.">
+    <meta property="twitter:site" content="@mymovies">
+    <meta property="twitter:creator" content="@mymovies">
+    <meta property="twitter:card" content="Summary_large_image">
+    <meta property="twitter:image:src" content="https://mymovies.fr/logo.jpg">
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
-    <title> My Movies </title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
@@ -43,16 +78,16 @@ session_start();
                 <div class="collapse navbar-collapse " id="navbarSupportedContent ">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item ">
-                            <a class="nav-link " href="../user/index.php"> Données personnelles <span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="../user/index.php"><span class="sr-only ">Données personnelles</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../guest/browse.php"> Catalogue </a>
+                            <a class="nav-link" href="./browse.php"> Catalogue </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="playlist.php"> Playlists </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="../user/contact.php"> Contact</a>
+                            <a class="nav-link " href="contact.php"> Contact</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0 ">
@@ -67,7 +102,7 @@ session_start();
         <div class="container rounded bg-white mt-5 mb-5">
             <div class="row">
                 <div class="col-md-3 border-right">
-                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://i.imgur.com/wvxPV9S.png"><span class="font-weight-bold"><?php echo $_SESSION['username']; ?></span><span class="text-black-50"></span><span> </span></div>
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="../images/wvxPV9S.webp" loading="lazy" data-src="wvxPV9S.webp" alt="avatar_mymovies"><span class="font-weight-bold"><?php echo $_SESSION['username']; ?></span><span class="text-black-50"></span><span> </span></div>
                 </div>
                 <div class="col-md-5 border-right">
                     <div class="p-3 py-5">
@@ -181,6 +216,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>

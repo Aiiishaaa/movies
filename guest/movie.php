@@ -47,7 +47,7 @@
                             <a class="nav-link " href="browse.php">Catalogue</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="about.php ">Playlists publiques</a>
+                            <a class="nav-link " href="playlistP.php">Playlists publiques</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="contact.php ">Contact</a>
@@ -62,7 +62,7 @@
                         <i class="fa fa-user"></i> Se connecter
                     </a>
                     <a href="#popup2" class="connexion">
-                        <i class="fa fa-user"></i> S'identifier
+                        <i class="fa fa-user"></i> Créer un compte
                     </a>
                 </div>
             </nav>
@@ -74,8 +74,7 @@
     <section class="section_movie">
         <div class="container">
             <div id="movie" class="row"></div>
-            <button class="btn btn-primary mt-4" id="addReview">Ajouter au playlist</button>
-
+            <button id="btn" class="btn btn-primary">Visionner le film</button>
             <div class="main-review mt-5">
                 <h3 class="title-second review-text mt-5">Critique du film </h3>
                 <div id="reviews"></div>

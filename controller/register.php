@@ -3,14 +3,15 @@
    session_start();
 
    include('connectdb.php');
+   include('checkInput.php');
 
-    $fullname = $_POST['fullname'];
-    $email = $_POST['email'];
-    $username = strtolower($_POST['username']);
-    $password = $_POST['password'];
+    $fullname = checkInput($_POST['fullname']);
+    $email = checkInput($_POST['email']);
+    $username = checkInput(strtolower($_POST['username']));
+    $password = checkInput($_POST['password']);
 
     //Validation
-    $q = "SELECT * FROM users WHERE Username = '$username' OR Email = '$email'";
+    $q = "SELECT * FROM user WHERE Username = '$username' OR Email = '$email'";
 
     $res = $conn->query($q);
     $num = mysqli_num_rows($res);  
@@ -22,7 +23,7 @@
             header('location: ../guest/index.php#error');
         }
     } else {
-        $sql = "INSERT INTO users (Username,Password,Fullname,Email,status) values('$username','$password','$fullname','$email','user')";
+        $sql = "INSERT INTO user (Username,Password,Fullname,Email,status) values('$username','$password','$fullname','$email','user')";
 
         $result = $conn -> query($sql);
 
