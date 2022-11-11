@@ -102,7 +102,7 @@ if(isset($langs[$current_lang])) unset($langs[$current_lang]);
         <div class="container rounded bg-white mt-5 mb-5">
             <div class="row">
                 <div class="col-md-3 border-right">
-                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://i.imgur.com/wvxPV9S.png"><span class="font-weight-bold"><?php echo $_SESSION['username']; ?></span><span class="text-black-50"></span><span> </span></div>
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="../images/wvxPV9S.webp" loading="lazy" data-src="wvxPV9S.webp" alt="avatar_mymovies"><span class="font-weight-bold"><?php echo $_SESSION['username']; ?></span><span class="text-black-50"></span><span> </span></div>
                 </div>
                 <div class="col-md-5 border-right">
                     <div class="p-3 py-5">
@@ -216,6 +216,7 @@ if(isset($langs[$current_lang])) unset($langs[$current_lang]);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
