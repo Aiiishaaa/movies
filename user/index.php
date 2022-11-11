@@ -1,23 +1,58 @@
-<?php
-
+<?php 
 session_start();
+/*fonction qui supprime les tanbulations, sauts de ligne et retours à la ligne */
+function ob_html_compress($buf){
+    return str_replace(array("\n","\r","\t"),'',$buf);
+}
 
+ob_start('ob_html_compress');
+?>
+<?php 
+$langs = array(
+	"fr" => "mymovies.fr",
+	"en" => "mymovies.com",
+	"es" => "mymovies.es",
+	"de" => "mymovies.de"
+);
+
+if(isset($_GET['lang']) && isset($langs[$_GET['lang']])){
+	$current_lang = $_GET['lang'];
+	$current_url = $langs[$current_lang];
+} else {
+	$current_lang = "fr";
+	$current_url = "mymovies.fr";
+}
+if(isset($langs[$current_lang])) unset($langs[$current_lang]);
 ?>
 <!DOCTYPE html>
-<html lang="fr-FR">
-
+<html lang="<?= $current_lang; ?>">
 <head>
-    <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Site Metas -->
-    <meta name="keywords" content="Film, playlist,Free streaming" />
-    <meta name="description" content=" Films en ligne " />
+  <meta charset="UTF-8">
+  <title> My Movies</title>
+    <?php
+    foreach($langs as $lang => $url){
+      echo'<link rel="alternate" href="'.$url.'" hreflang="'.$lang.'">';
+    }
+    ?>
+    <link rel="canonical" href="<?= $current_url; ?>">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="keywords" content="Film, playlist,streaming, cinéma, synopsys, movies" />
     <meta name="author" content="Aicha Takwa Naïm" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce. Regardez également votre film préféré en streaming.">
+    <meta property="og:type" content="Mymovies">
+    <meta property="og:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
+    <meta property="og:site_name" content="Mymovies">
+    <meta property="og:url" content="https://mymovies.fr">
+    <meta property="og:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce. Regardez également votre film préféré en streaming.">
+    <meta property="og:image" content="https://mymovies.fr/logo.jpg">
+    <meta property="twitter:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
+    <meta property="twitter:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce. Regardez également votre film préféré en streaming.">
+    <meta property="twitter:site" content="@mymovies">
+    <meta property="twitter:creator" content="@mymovies">
+    <meta property="twitter:card" content="Summary_large_image">
+    <meta property="twitter:image:src" content="https://mymovies.fr/logo.jpg">
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
-    <title> My Movies </title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
