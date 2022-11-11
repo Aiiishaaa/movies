@@ -76,7 +76,7 @@ $listeUsers=$user1C->afficherUsers();
             <form action="" method="post">
                 <div class="row">
                     <div class="col-md-10 box1">
-                        <h2> La liste contient </span><?php 5  ?> utilisateur(s).</h2>
+                        <h2> La liste contient </span><?php ?> utilisateur(s).</h2>
                         <?PHP
 foreach($listeUsers as $row){
 	?>
@@ -101,8 +101,8 @@ foreach($listeUsers as $row){
                         </tbody>
 
                   </table>
-                  <a href="../controller2/updateuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-primary">Modifier</a>
-                  <a href="../controller2/deleteuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-danger">Supprimer</a>
+                  <a href="../controller/updateuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-primary">Modifier</a>
+                  <a href="../controller/deleteuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-danger">Supprimer</a>
                   <?PHP
 }
 ?>
@@ -118,22 +118,24 @@ foreach($listeUsers as $row){
                 <h2>Ajouter nouveau compte</h2>
                 <a class="close-window" href="#">&times;</a>
                 <div class="log-content">
-                    <form action="../controller/register.php" method="post">
-                        <i class="fa fa-user icon"></i>
-                        <input type="text" placeholder="Nom complet" name="fullname" class="log-input" required>
-                        <br>
-                        <i class="fa fa-envelope icon"></i>
-                        <input type="email" placeholder="Mail" name="email" class="log-input" required>
-                        <br>
-                        <i class="fa fa-link icon"></i>
-                        <input type="text" placeholder="Nom d'utilisateur " name="username" class="log-input" required>
-                        <br>
-                        <i class="fa fa-lock icon"></i>
-                        <input type="password" placeholder="Mot de passe" name="password" class="log-input" required>
-                        <br>
-                        <input type="submit" value="S'inscrire" name="signup-btn" class="btn-log">
-                    </form>
-                </div>
+                <form action="../controller/register.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Nom" name="name" class="log-input" required>
+                    <br>
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Prénom" name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" placeholder="Email" name="email" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <br>
+                    <input type="checkbox" name="chkbox" required>J'accepte les termes et conditions
+                    <br>
+                    <input type="submit" value="S'enregistrer" name="signup-btn" class="btn-log">
+                </form>
+            </div>
             </div>
         </div>
         <div id="success" class="popup-overlay">

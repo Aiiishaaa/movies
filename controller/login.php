@@ -8,11 +8,8 @@ include('checkInput.php');
     //Validation
     $q="SELECT * from user where username='".$username."' and password='".$password."' LIMIT 1";
 
-    // $q = "SELECT * FROM users WHERE username = '$username' && password = '$password'";
     $db = config::getConnexion();
     $res=$db->query($q);
-
-    // $num = mysqli_num_rows($res);   
 
     if ($res->num_rows =1) {
 

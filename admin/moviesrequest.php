@@ -1,5 +1,9 @@
 <?php
-include('../controller/connectdb.php');
+
+
+include('../core/contactC.php');
+$contact1C=new ContactController();
+$listeContacts=$contact1C->afficherContacts();
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
@@ -63,17 +67,10 @@ include('../controller/connectdb.php');
         <div class="container mt-4">
             <h2 class="contact_taital mt-4">Demandes des utilisateurs</h2>
             <div class="row">
-                <?php
-                $sql = "SELECT * FROM contact";
-
-                $result = $conn->query($sql);
-                $list = '';
-                $total = $result->num_rows;
-
-                if ($result->num_rows > 0) {
-                    if ($row = $result->fetch_assoc()) {
-                        $list = $list .
-                            '<table class="table table-dark">
+            <?PHP
+foreach($listeContacts as $row){
+	?>
+                            <table class="table table-dark">
                             <thead>
                                 <tr>
                                     <th scope="col">Nom</th>
@@ -83,25 +80,21 @@ include('../controller/connectdb.php');
                                     <th scope="col">Date</th>
                                 </tr>
                             </thead>
-                            <tbody>';
-                        $list = $list . '<tr>
-                                    <td>' . $row['fullname'] . '</td>
-                                    <td>' . $row['Email'] . '</td>
-                                    <td>' . $row['Sujet'] . '</td>
-                                    <td>' . $row['Message'] . '</td>
-                                    <td>' . $row['Date'] . '</td>
+                            <tbody>
+                                <tr>
+                                    <td><?PHP echo $row['fullname']; ?></td>
+                                    <td><?PHP echo $row['Email']; ?></td>
+                                    <td><?PHP echo $row['Sujet']; ?></td>
+                                    <td><?PHP echo $row['Message']; ?></td>
+                                    <td><?PHP echo $row['Date']; ?></td>
                                 </tr>
                                 </tbody>
                                 </table>
                                 <a href="delete.php?id=' . $row['contact_id'] . '" class="btn btn-danger">Supprimer</a>';
-
-                    }
-                } else {
-                    echo "Il n'y a pas de demandes via le formulaire de contact";
-                }
-
-                echo $list;
-                ?>
+                                <?PHP
+}
+?>
+                
             </div>
         </div>
 

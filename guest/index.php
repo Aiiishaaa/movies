@@ -58,7 +58,7 @@ if (isset($_SESSION['username'])) {
             <h2>Créer un compte</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
-                <form action="../controller2/register.php" method="post">
+                <form action="../controller/register.php" method="post">
                     <i class="fa fa-user icon"></i>
                     <input type="text" placeholder="Nom" name="name" class="log-input" required>
                     <br>

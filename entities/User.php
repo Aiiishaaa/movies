@@ -8,8 +8,8 @@ class User{
 	protected $password;
 	protected $status;
 	protected $number;
-	protected $idplaylist;
 
+	
 	/**
 	 * @return mixed
 	 */
@@ -120,19 +120,7 @@ class User{
 		$this->status = $status;
 	}
 
-	/**
-	 * @return mixed
-	 */
-	public function getIdplaylist() {
-		return $this->idplaylist;
-	}
 
-	/**
-	 * @param mixed $idGarage
-	 */
-	public function setIdplaylist( $idplaylist ) {
-		$this->idplaylist= $idplaylist;
-	}
 
 }
 

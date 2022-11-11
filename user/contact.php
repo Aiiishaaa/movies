@@ -93,7 +93,7 @@ session_start();
                                 <input type="email" class="form-control" placeholder="Mail" name="email" required />
                             </div>
                             <div>
-                                <input type="text" class="form-control" placeholder="Sujet" name="sujet" required>
+                                <input type="text" class="form-control" placeholder="Sujet" name="Subject" required>
                             </div>
                             <div>
                                 <textarea class="form-control" placeholder="Message" name="message" required></textarea>

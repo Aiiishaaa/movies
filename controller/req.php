@@ -1,4 +1,6 @@
 <?php
+include "../entities/Contact.php";
+include "../core/contactC.php";
 
    session_start();
     if (!isset($_SESSION['username'])) {
@@ -16,9 +18,10 @@
     $email = checkInput($_POST['email']);
     $Sujet = checkInput($_POST['sujet']);
     $message = checkInput($_POST['message']);
-    $date = date("Y-m-d H:i:s");   
-    $sql = "INSERT INTO contact (fullname, email, Sujet, message, date) VALUES ('$fullname', '$email', '$Sujet', '$message', '$date')"; 
+    $date = date("Y-m-d H:i:s");  
+    
+    $contact1=new contact($_POST['fullname'],$_POST['email'],$_POST['sujet'],$_POST['message']);
+    $contact1->setDate($date);
+    $contact1C=new ContactController();
+    $contact1C->addContact($contact1);
 
-    $result = $conn -> query($sql);
-
-    $conn->close();
