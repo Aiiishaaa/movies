@@ -52,7 +52,7 @@ function popularMovies() {
 
 function getMovies(searchText) {
     axios.get(
-        "https://api.themoviedb.org/5/search/movie?api_key=5ec279387e9aa9488ef4d00b22acc451&query=" +
+        "https://api.themoviedb.org/3/search/movie?api_key=2cd5601329a73db67d46ec6f68a6fcc9&query=" +
         searchText
     );
     axios
@@ -100,7 +100,7 @@ function getReviews() {
     let movieId = sessionStorage.getItem("id");
     axios
         .get(
-            `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=5ec279387e9aa9488ef4d00b22acc451&language=fr-FR&page=1`
+            `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=2cd5601329a73db67d46ec6f68a6fcc9&language=fr-FR&page=1`
         )
 
     .then((response) => {
@@ -130,11 +130,9 @@ function getReviews() {
 
 function getMovie() {
     let movieId = sessionStorage.getItem("id");
-
-    //test id -> 299536
     axios
         .get(
-            `https://api.themoviedb.org/3/movie/${movieId}?api_key=5ec279387e9aa9488ef4d00b22acc451&language=fr-FR`
+            `https://api.themoviedb.org/3/movie/${movieId}?api_key=2cd5601329a73db67d46ec6f68a6fcc9&language=fr-FR`
         )
 
     .then((response) => {
@@ -215,7 +213,7 @@ function getMovie() {
 function getTopMovies() {
     axios
         .get(
-            "https://api.themoviedb.org/3/movie/top_rated?api_key=5ec279387e9aa9488ef4d00b22acc451&language=fr-FR&page=1"
+            "https://api.themoviedb.org/3/movie/top_rated?api_key=2cd5601329a73db67d46ec6f68a6fcc9&language=fr-FR&page=1"
         )
         .then((response) => {
             console.log(response);
@@ -367,4 +365,6 @@ function getTopMovies() {
         .catch((error) => {
             console.log(error);
         });
+
+
 }

@@ -55,7 +55,7 @@ if (isset($_SESSION['username'])) {
 
     <div id="popup2" class="popup-overlay">
         <div class="log-popup">
-            <h2>S'identifier</h2>
+            <h2>Créer un compte</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
                 <form action="../controller/register.php" method="post">
@@ -127,13 +127,13 @@ if (isset($_SESSION['username'])) {
                 <div class="collapse navbar-collapse " id="navbarSupportedContent ">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item active ">
-                            <a class="nav-link " href="index.php">Accueil <span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="index.php">Accueil<span class="sr-only ">(current)</span></a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link " href="browse.php">Catalogue</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="about.php">Playlists publiques</a>
+                            <a class="nav-link " href="playlistP.php">Playlists publiques</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="contact.php ">Contact</a>
@@ -148,7 +148,7 @@ if (isset($_SESSION['username'])) {
                         <i class="fa fa-user"></i> Se connecter
                     </a>
                     <a href="#popup2" class="connexion">
-                        <i class="fa fa-user"></i> S'identifier
+                        <i class="fa fa-user"></i> Créer un compte
                     </a>
                 </div>
             </nav>
