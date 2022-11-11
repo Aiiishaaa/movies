@@ -191,7 +191,6 @@ function getMovie() {
                             <strong>Langue : </strong> ${movie.original_language}</li>
                     </ul>
                 </div>
-
                 <div class="col-lg-4">
                     <h3 class="title-second">Résumé</h3>
                     <p>${movie.overview}</p>
