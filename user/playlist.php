@@ -56,12 +56,9 @@
                             <i class="fa fa-search "></i>
                         </button>
                     </form>
-                    <a href="#popup1" class="connexion">
-                        <i class="fa fa-user"></i> Se connecter
-                    </a>
-                    <a href="#popup2" class="connexion">
-                        <i class="fa fa-user"></i> Créer un compte
-                    </a>
+                    <form class="form-inline my-2 my-lg-0 ">
+                        <a href="../controller/logout.php" class="btn my-2 connexion my-sm-0 mr-3" type="submit">Se déconnecter</a>
+                    </form>
                 </div>
             </nav>
         </div>

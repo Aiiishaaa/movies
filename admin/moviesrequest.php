@@ -85,11 +85,11 @@ include('../controller/connectdb.php');
                             </thead>
                             <tbody>';
                         $list = $list . '<tr>
-                                    <td>' . $row['fullname'] . '</td>
-                                    <td>' . $row['Email'] . '</td>
-                                    <td>' . $row['Sujet'] . '</td>
-                                    <td>' . $row['Message'] . '</td>
-                                    <td>' . $row['Date'] . '</td>
+                                    <td>' . $row['name'] . '</td>
+                                    <td>' . $row['email'] . '</td>
+                                    <td>' . $row['sujet'] . '</td>
+                                    <td>' . $row['message'] . '</td>
+                                    <td>' . $row['date'] . '</td>
                                 </tr>
                                 </tbody>
                                 </table>

@@ -63,7 +63,7 @@ if (isset($_SESSION['username'])) {
                     <input type="text" placeholder="Nom" name="name" class="log-input" required>
                     <br>
                     <i class="fa fa-user icon"></i>
-                    <input type="text" placeholder="Prénom" name="username" class="log-input" required>
+                    <input type="text" placeholder="Username" name="username" class="log-input" required>
                     <br>
                     <i class="fa fa-envelope icon"></i>
                     <input type="email" placeholder="Email" name="email" class="log-input" required>
