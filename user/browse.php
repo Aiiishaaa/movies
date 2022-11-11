@@ -46,7 +46,7 @@ session_start();
                             <a class="nav-link " href="index.php ">Données personnelles </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="browse.php">Catalogue <span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="browse.php"><span class="sr-only ">Catalogue</span></a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link " href="playlist.php">Playlists</a>

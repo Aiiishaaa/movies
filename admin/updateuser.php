@@ -11,7 +11,7 @@ if (!isset($_SESSION['username'])) {
 include('../controller/connectdb.php');
 
 $id = $_REQUEST['id'];
-$query = "SELECT * from users where UserId='$id'";
+$query = "SELECT * from user where user_id='$id'";
 $r = $conn->query($query);
 $row = $r->fetch_assoc();
 
@@ -21,7 +21,7 @@ if (isset($_POST['update'])) {
     $username = strtolower($_POST['username']);
     $password = $_POST['password'];
 
-    $q = "SELECT * FROM users WHERE Username = '$username' OR Email = '$email'";
+    $q = "SELECT * FROM user WHERE Username = '$username' OR Email = '$email'";
 
     $res = $conn->query($q);
     $num = mysqli_num_rows($res);
@@ -30,7 +30,7 @@ if (isset($_POST['update'])) {
         echo "error";
         header('location: users.php#error');
     } else {
-        $sql = "UPDATE users SET Fullname='$fullname',Username='$username',Password = '$password', Email='$email' WHERE UserId='$id'";
+        $sql = "UPDATE user SET Fullname='$fullname',Username='$username',Password = '$password', Email='$email' WHERE user_id='$id'";
         $result = $conn->query($sql);
         header('location: users.php#updatesuccess');
     }
@@ -80,7 +80,7 @@ if (isset($_POST['update'])) {
                             <a class="nav-link " href="index.php">Accueil</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="users.php"> Gestion des utilisateurs <span class="sr-only">(current)</span></a>
+                            <a class="nav-link " href="users.php"><span class="sr-only">Gestion des utilisateurs</span></a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link " href="moviesrequest.php"> Demandes des utilisateurs</a>

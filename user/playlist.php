@@ -45,7 +45,7 @@
                             <a class="nav-link " href="browse.php">Catalogue</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="playlist.php">Playlists<span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="playlist.php"><span class="sr-only ">Playlists</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="contact.php">Contact</a>

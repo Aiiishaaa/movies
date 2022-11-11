@@ -129,7 +129,7 @@ if (isset($_SESSION['username'])) {
                             <a class="nav-link " href="index.php ">Accueil </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="browse.php">Catalogue <span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="browse.php"><span class="sr-only ">Catalogue</span></a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link " href="playlistP.php">Playlists publiques</a>

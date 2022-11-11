@@ -58,7 +58,7 @@ session_start();
                             <a class="nav-link " href="playlist.php">Playlists</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="contact.php ">Contact<span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="contact.php "><span class="sr-only ">Contact</span></a>
                         </li>
                     </ul>
                     <form class="form-inline ">

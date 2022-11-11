@@ -6,7 +6,7 @@ include('checkInput.php');
     $username = checkInput($_POST['username']);
     $password = checkInput($_POST['password']);
     //Validation
-    $q = "SELECT * FROM users WHERE Username = '$username' && Password = '$password'";
+    $q = "SELECT * FROM user WHERE Username = '$username' && Password = '$password'";
 
     $res = $conn->query($q);
     $num = mysqli_num_rows($res);  

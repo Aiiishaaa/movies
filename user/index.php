@@ -78,7 +78,7 @@ if(isset($langs[$current_lang])) unset($langs[$current_lang]);
                 <div class="collapse navbar-collapse " id="navbarSupportedContent ">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item ">
-                            <a class="nav-link " href="../user/index.php"> Données personnelles <span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="../user/index.php"><span class="sr-only ">Données personnelles</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./browse.php"> Catalogue </a>

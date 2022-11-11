@@ -52,7 +52,7 @@ include('userlist.php');
                             <a class="nav-link " href="index.php">Accueil</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="users.php"> Gestion des utilisateurs <span class="sr-only">(current)</span></a>
+                            <a class="nav-link " href="users.php"><span class="sr-only">Gestion des utilisateurs</span></a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link " href="moviesrequest.php"> Demandes des utilisateurs</a>
