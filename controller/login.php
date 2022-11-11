@@ -1,9 +1,10 @@
 <?php
 session_start();
 include('connectdb.php');
+include('checkInput.php');
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = checkInput($_POST['username']);
+    $password = checkInput($_POST['password']);
     //Validation
     $q = "SELECT * FROM users WHERE Username = '$username' && Password = '$password'";
 

@@ -6,7 +6,8 @@ if (!isset($_SESSION['username'])) {
 }
 
 include('connectdb.php');
-$id=$_CONTACT['id'];
+include('checkInput.php');
+$id = checkInput($_CONTACT['id']);
 
 $del = "DELETE  FROM contact WHERE ContactId= '$id'"; 
 $result = $conn -> query($del);

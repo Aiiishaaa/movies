@@ -3,11 +3,12 @@
    session_start();
 
    include('connectdb.php');
+   include('checkInput.php');
 
-    $fullname = $_POST['fullname'];
-    $email = $_POST['email'];
-    $username = strtolower($_POST['username']);
-    $password = $_POST['password'];
+    $fullname = checkInput($_POST['fullname']);
+    $email = checkInput($_POST['email']);
+    $username = checkInput(strtolower($_POST['username']));
+    $password = checkInput($_POST['password']);
 
     //Validation
     $q = "SELECT * FROM users WHERE Username = '$username' OR Email = '$email'";

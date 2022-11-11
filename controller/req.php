@@ -10,11 +10,12 @@
     }
    
    include('connectdb.php');
+   include('checkInput.php');
 
-    $fullname = $_POST['fullname'];
-    $email = $_POST['email'];
-    $Sujet = $_POST['sujet'];
-    $message = $_POST['message'];
+    $fullname = checkInput($_POST['fullname']);
+    $email = checkInput($_POST['email']);
+    $Sujet = checkInput($_POST['sujet']);
+    $message = checkInput($_POST['message']);
     $date = date("Y-m-d H:i:s");   
     $sql = "INSERT INTO contact (fullname, email, Sujet, message, date) VALUES ('$fullname', '$email', '$Sujet', '$message', '$date')"; 
 
