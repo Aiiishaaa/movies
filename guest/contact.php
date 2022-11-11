@@ -47,7 +47,7 @@
 
     <div id="popup2" class="popup-overlay">
         <div class="log-popup">
-            <h2>S'identifier</h2>
+            <h2>Créer un compte</h2>
             <a class="close-window" href="#">&times;</a>
             <div class="log-content">
                 <form action="../controller/register.php" method="post">
@@ -126,7 +126,7 @@
                             <a class="nav-link " href="browse.php">Catalogue</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="about.php">Playlists publiques</a>
+                            <a class="nav-link " href="playlistP.php">Playlists publiques</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="contact.php ">Contact<span class="sr-only ">(current)</span></a>
@@ -141,7 +141,7 @@
                         <i class="fa fa-user"></i> Se connecter
                     </a>
                     <a href="#popup2" class="connexion">
-                        <i class="fa fa-user"></i> S'identifier
+                        <i class="fa fa-user"></i> Créer un compte
                     </a>
                 </div>
             </nav>

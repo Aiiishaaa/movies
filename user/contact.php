@@ -1,15 +1,10 @@
+
 <?php
+
 session_start();
-if (isset($_SESSION['username'])) {
-    if ($_SESSION['status'] == "admin") {
-        header('location: ../admin/index.php');
-    } else {
-        header('location: ../user/index.php');
-    }
-}
+
 ?>
 <!DOCTYPE html>
-
 <html lang="fr-FR">
 
 <head>
@@ -24,92 +19,20 @@ if (isset($_SESSION['username'])) {
     <meta name="author" content="Aicha Takwa Naïm" />
     <link rel="shortcut icon" href="../images/favicon.ico" type="">
     <title> My Movies </title>
+    <!--owl slider stylesheet -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- nice select  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../css/style.css" rel="stylesheet" />
 
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-        <!-- Pop up boxes for login and registration -->
-        <div id="popup1" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Se connecter</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <form action="../controller/login.php" method="post">
-                    <i class="fa fa-user icon"></i>
-                    <input type="text" placeholder="Username" name="username" class="log-input" required>
-                    <br>
-                    <i class="fa fa-lock icon"></i>
-                    <input type="password" placeholder="Password" name="password" class="log-input" required>
-                    <br>
-                    <input type="submit" value="Se connecter" name="signup-btn" class="btn-log">
-                </form>
-            </div>
-        </div>
-    </div>
 
-    <div id="popup2" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Créer un compte</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <form action="../controller/register.php" method="post">
-                    <i class="fa fa-user icon"></i>
-                    <input type="text" placeholder="Nom" name="fullname" class="log-input" required>
-                    <br>
-                    <i class="fa fa-envelope icon"></i>
-                    <input type="email" placeholder="Email" name="email" class="log-input" required>
-                    <br>
-                    <i class="fa fa-link icon"></i>
-                    <input type="text" placeholder="Username" name="username" class="log-input" required>
-                    <br>
-                    <i class="fa fa-lock icon"></i>
-                    <input type="password" placeholder="Password" name="password" class="log-input" required>
-                    <br>
-                    <input type="checkbox" name="chkbox" required>J'accepte les termes et conditions
-                    <br>
-                    <input type="submit" value="S'enregistrer"" name="signup-btn" class="btn-log">
-                </form>
-            </div>
-        </div>
-    </div>
-    <div id="success" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Bravo!</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <p>Votre compte a été créé avec succès! Merci de vous connecter <i class="fa fa-smile"></i></p>
-                </p>
-                <a href="#popup1" class="btn-main btn-main-primary">
-                    Se connecter
-                </a>
-            </div>
-        </div>
-    </div>
-    <div id="error" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Erreur</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <p>Le nom d'utilisateur ou l'adresse électronique existe déjà ! <i class="fa fa-frown"></i></p>
-            </div>
-        </div>
-    </div>
-    <div id="error1" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Erreur</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <p>Compte introuvable !<i class="fa fa-frown"></i></p>
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- End of Pop up boxes for login and registration -->
     <!-- header section strats -->
     <header class="header_section ">
         <div class="container ">
@@ -126,16 +49,16 @@ if (isset($_SESSION['username'])) {
                 <div class="collapse navbar-collapse " id="navbarSupportedContent ">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item active ">
-                            <a class="nav-link " href="index.php ">Accueil </a>
+                            <a class="nav-link " href="index.php">Données personnelles</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="browse.php">Catalogue <span class="sr-only ">(current)</span></a>
+                            <a class="nav-link " href="browse.php">Catalogue</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="playlistP.php">Playlists publiques</a>
+                            <a class="nav-link " href="playlist.php">Playlists</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="contact.php ">Contact</a>
+                            <a class="nav-link " href="contact.php ">Contact<span class="sr-only ">(current)</span></a>
                         </li>
                     </ul>
                     <form class="form-inline ">
@@ -143,44 +66,49 @@ if (isset($_SESSION['username'])) {
                             <i class="fa fa-search "></i>
                         </button>
                     </form>
-                    <a href="#popup1" class="connexion">
-                        <i class="fa fa-user"></i> Se connecter
-                    </a>
-                    <a href="#popup2" class="connexion">
-                        <i class="fa fa-user"></i> Créer un compte
-                    </a>
+                    <form class="form-inline my-2 my-lg-0 ">
+                        <a href="../controller/logout.php" class="btn my-2 connexion my-sm-0 mr-3" type="submit">Se déconnecter</a>
+                    </form>
                 </div>
             </nav>
         </div>
     </header>
     <!-- end header section -->
 
-    <!--  start category section -->
-    <section class="browse-section">
-        <div class="container-fluid">
-            <div class="container">
-                <div class="sbox">
-                    <div class="row">
-                        <h1 class="offset-lg-3">My Movies : plus de 10K films</h1>
-                        <p class="offset-lg-3">Parcourez notre base de données de films et trouvez votre film préféré</p>
-                    </div>
-                    <div class="container">
-                        <div class="mt-4 row height d-flex justify-content-center align-items-center">
-                            <div class="col-lg-6 col-md-6">
-                                <form id="searchForm">
-                                    <input type="text" class="searchBox" placeholder="Chercher un film " id="searchText">
-                                </form>
+    <!-- contact section -->
+    <section class="contact_section">
+        <div class="container">
+            <div class="row">
+                <img class="col-md-6 col-lg-4" src="../images/logoMyMovies.png" alt="">
+                <div class="col-md-6 col-lg-6 offset-lg-1">
+                    <h2>
+                        Nous contacter
+                    </h2>
+                    <div class="form_container">
+                        <form action="../controller/req.php" method="post">
+                            <div>
+                                <input type="text" class="form-control" placeholder="Nom complet" name="fullname" required />
                             </div>
-                        </div>
+                            <div>
+                                <input type="email" class="form-control" placeholder="Mail" name="email" required />
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Sujet" name="sujet" required>
+                            </div>
+                            <div>
+                                <textarea class="form-control" placeholder="Message" name="message" required></textarea>
+                            </div>
+
+                            <div class="btn offset-lg-4">
+                                <button type="submit">Envoyer </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
-            <div class="container">
-                <div id="movies" class="row"></div>
-            </div>
         </div>
     </section>
+    <!-- end contact section -->
 
     <!-- footer section -->
     <footer class="footer_section ">
@@ -193,7 +121,7 @@ if (isset($_SESSION['username'])) {
                         </h4>
                         <div class="contact_link_box ">
 
-                            <a href=" ">
+                            <a href="">
                                 <i class="fa fa-phone " aria-hidden="true "></i>
                                 <span>
                                     06.00.00.00.00
@@ -267,21 +195,9 @@ if (isset($_SESSION['username'])) {
     </footer>
     <!-- footer section -->
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/main.js"></script>
-    <script>
-        popularMovies();
-    </script>
 </body>
 
 </html>

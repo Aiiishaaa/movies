@@ -216,12 +216,20 @@
             width: 100%;
             border-collapse: collapse;
         }
+        /*end admin section*/
         /* section user */
         
         body {
             background-color: #000
         }
         /*end user section*/
+        /* section playlistPublique */
+        
+        .section_playlistPublique {
+            text-decoration: white;
+            color: #ffd60a;
+        }
+        /*end playlistPublique section*/
         /* footer section*/
         
         .footer_section {

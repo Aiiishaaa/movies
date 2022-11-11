@@ -1,12 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
-    if ($_SESSION['status'] == "admin") {
-        header('location: ../admin/index.php');
-    } else {
-        header('location: ../user/index.php');
-    }
-}
+
 ?>
 <!DOCTYPE html>
 
@@ -33,83 +27,6 @@ if (isset($_SESSION['username'])) {
 </head>
 
 <body>
-        <!-- Pop up boxes for login and registration -->
-        <div id="popup1" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Se connecter</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <form action="../controller/login.php" method="post">
-                    <i class="fa fa-user icon"></i>
-                    <input type="text" placeholder="Username" name="username" class="log-input" required>
-                    <br>
-                    <i class="fa fa-lock icon"></i>
-                    <input type="password" placeholder="Password" name="password" class="log-input" required>
-                    <br>
-                    <input type="submit" value="Se connecter" name="signup-btn" class="btn-log">
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="popup2" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Créer un compte</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <form action="../controller/register.php" method="post">
-                    <i class="fa fa-user icon"></i>
-                    <input type="text" placeholder="Nom" name="fullname" class="log-input" required>
-                    <br>
-                    <i class="fa fa-envelope icon"></i>
-                    <input type="email" placeholder="Email" name="email" class="log-input" required>
-                    <br>
-                    <i class="fa fa-link icon"></i>
-                    <input type="text" placeholder="Username" name="username" class="log-input" required>
-                    <br>
-                    <i class="fa fa-lock icon"></i>
-                    <input type="password" placeholder="Password" name="password" class="log-input" required>
-                    <br>
-                    <input type="checkbox" name="chkbox" required>J'accepte les termes et conditions
-                    <br>
-                    <input type="submit" value="S'enregistrer"" name="signup-btn" class="btn-log">
-                </form>
-            </div>
-        </div>
-    </div>
-    <div id="success" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Bravo!</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <p>Votre compte a été créé avec succès! Merci de vous connecter <i class="fa fa-smile"></i></p>
-                </p>
-                <a href="#popup1" class="btn-main btn-main-primary">
-                    Se connecter
-                </a>
-            </div>
-        </div>
-    </div>
-    <div id="error" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Erreur</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <p>Le nom d'utilisateur ou l'adresse électronique existe déjà ! <i class="fa fa-frown"></i></p>
-            </div>
-        </div>
-    </div>
-    <div id="error1" class="popup-overlay">
-        <div class="log-popup">
-            <h2>Erreur</h2>
-            <a class="close-window" href="#">&times;</a>
-            <div class="log-content">
-                <p>Compte introuvable !<i class="fa fa-frown"></i></p>
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- End of Pop up boxes for login and registration -->
     <!-- header section strats -->
     <header class="header_section ">
         <div class="container ">
@@ -126,13 +43,13 @@ if (isset($_SESSION['username'])) {
                 <div class="collapse navbar-collapse " id="navbarSupportedContent ">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item active ">
-                            <a class="nav-link " href="index.php ">Accueil </a>
+                            <a class="nav-link " href="index.php ">Données personnelles </a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link " href="browse.php">Catalogue <span class="sr-only ">(current)</span></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="playlistP.php">Playlists publiques</a>
+                            <a class="nav-link " href="playlist.php">Playlists</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="contact.php ">Contact</a>
@@ -143,12 +60,9 @@ if (isset($_SESSION['username'])) {
                             <i class="fa fa-search "></i>
                         </button>
                     </form>
-                    <a href="#popup1" class="connexion">
-                        <i class="fa fa-user"></i> Se connecter
-                    </a>
-                    <a href="#popup2" class="connexion">
-                        <i class="fa fa-user"></i> Créer un compte
-                    </a>
+                    <form class="form-inline my-2 my-lg-0 ">
+                        <a href="../controller/logout.php" class="btn my-2 connexion my-sm-0 mr-3" type="submit">Se déconnecter</a>
+                    </form> 
                 </div>
             </nav>
         </div>

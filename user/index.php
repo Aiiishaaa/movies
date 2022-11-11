@@ -46,13 +46,13 @@ session_start();
                             <a class="nav-link " href="../user/index.php"> Données personnelles <span class="sr-only ">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../guest/browse.php"> Catalogue </a>
+                            <a class="nav-link" href="./browse.php"> Catalogue </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="playlist.php"> Playlists </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="../user/contact.php"> Contact</a>
+                            <a class="nav-link " href="contact.php"> Contact</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0 ">
