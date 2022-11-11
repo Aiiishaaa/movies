@@ -477,6 +477,10 @@
             max-height: 30%;
             overflow: auto;
         }
+
+        table{
+            background-color:  white !important;
+        }
         
         @media screen and (max-width: 700px) {
             .log-box {

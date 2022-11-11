@@ -69,6 +69,79 @@
     <!-- end header section -->
 
     <!--  section playlistPublique  -->
+    <div class="container-fluid">
+
+	<h2 class="page-header text-center">Playlist</h2>
+	<div class="row justify-content-center">
+		<div class="col-sm-8 style_cart">
+			<?php 
+			if(isset($_SESSION['message'])){
+				?>
+				<div class="alert alert-info text-center">
+					<?php echo $_SESSION['message']; ?>
+				</div>
+				<?php
+				unset($_SESSION['message']);
+			}
+
+			?>
+			<form method="POST" action="../shop/save_cart.php">
+			<table class="table table-bordered table-striped">
+				<thead>
+					<th>Nom du film</th>
+					<th>Durée</th>
+				</thead>
+				<tbody>
+					<?php
+						//initialize total
+						$total = 0;
+						if(!empty($_SESSION['cart'])){
+						//connection
+						$conn = Database::connect();
+						//create array of initail qty which is 1
+ 						$index = 0;
+ 						if(!isset($_SESSION['qty_array'])){ //téléphone et combien de fois on l'a
+ 							$_SESSION['qty_array'] = array_fill(0, count($_SESSION['cart']), 1);
+ 						}
+						//  var_dump($_SESSION['qty_array']);
+						 //Implode : Rassemble les éléments d'un tableau en une chaîne //$_SESSION['cart'] nombre d'article
+						 $statement = "SELECT * FROM smartphones WHERE id IN (".implode(',',$_SESSION['cart']).")";
+						 $query = $conn->query($statement);
+							while($item = $query->fetch()){
+								?>
+								<tr>
+									<td>
+										<a href="../shop/delete_item.php?id=<?php echo $item['id']; ?>&index=<?php echo $index; ?>" class="btn btn-danger btn-sm"><span class="fas fa-trash-alt"></span></a>
+									</td>
+									<td><?php echo $item['name']; ?></td>
+									<td><?php echo number_format($item['price'], 2); ?>€</td>
+									<input type="hidden" name="indexes[]" value="<?php echo $index; ?>">
+									<td><input type="text" class="form-control" value="<?php echo $_SESSION['qty_array'][$index]; ?>" name="qty_<?php echo $index; ?>"></td>
+									<td><?php echo number_format($_SESSION['qty_array'][$index]*$item['price'], 2); ?>€</td>
+									<?php $total += $_SESSION['qty_array'][$index]*$item['price']; ?>
+								</tr>
+								<?php
+								$index ++;
+							}
+						}
+						else{
+							?>
+							<tr>
+								<td colspan="4" class="text-center">Aucun Film</td>
+							</tr>
+							<?php
+						}
+					?>
+					<tr>
+
+					</tr>
+				</tbody>
+			</table>
+			</form>
+		</div>
+	</div>
+</div>
+
     <section class="section_playlistPublique">
         <div class="container">
             <div id="playlist" class="row"></div>

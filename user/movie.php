@@ -80,9 +80,8 @@ session_start();
     <section class="section_movie">
         <div class="container">
             <div id="movie" class="row mb-4"></div>
-            <button class="btn btn-primary mt-4">Ajouter au playlist</button>
+            <a class="btn btn-primary mt-4" href="./shop/add_cart.php?id=<?php echo $item['id']; ?>" class="btn btn-order" role="button">Ajouter à la playlist</a>
             <button class="btn btn-primary mt-4">Visionner le film</button>
-
 
             <div class="main-review mt-5">
                 <h3 class="title-second review-text mt-5">Critique du film </h3>
