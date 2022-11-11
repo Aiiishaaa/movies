@@ -5,12 +5,15 @@ include('connectdb.php');
     $username = $_POST['username'];
     $password = $_POST['password'];
     //Validation
-    $q = "SELECT * FROM users WHERE Username = '$username' && Password = '$password'";
+    $q="SELECT * from users where username='".$username."' and password='".$password."' LIMIT 1";
 
-    $res = $conn->query($q);
-    $num = mysqli_num_rows($res);  
+    // $q = "SELECT * FROM users WHERE username = '$username' && password = '$password'";
+    $db = config::getConnexion();
+    $res=$db->query($q);
 
-    if ($num == 1) {
+    // $num = mysqli_num_rows($res);   
+
+    if ($res->num_rows =1) {
 
        $_SESSION['username'] = strtolower($username);
         

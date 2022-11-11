@@ -1,9 +1,17 @@
 <?php
-$conn = new mysqli('localhost','root','','mymovies');
+  class config {
+    private static $instance = NULL;
 
-if ($conn->connect_error) {
-   die(" Il y a un probleme de connexion à la base de données ! ".$conn->connect_error);
-} else {
-    echo " Connexion réussi à la base de données ! ";
-}
+    public static function getConnexion() {
+      if (!isset(self::$instance)) {
+		try{
+        self::$instance = new PDO('mysql:host=localhost;dbname=movies', 'root', '');
+		self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		}catch(Exception $e){
+            die('Erreur: '.$e->getMessage());
+		}
+      }
+      return self::$instance;
+    }
+  }
 ?>

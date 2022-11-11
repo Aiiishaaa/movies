@@ -7,7 +7,9 @@ if (!isset($_SESSION['username'])) {
         header('location: ../user/index.php');
     }
 }
-include('userlist.php');
+// include('userlist.php');
+include('../core/userC.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
