@@ -9,6 +9,9 @@ if (!isset($_SESSION['username'])) {
 }
 // include('userlist.php');
 include('../core/userC.php');
+$user1C=new UserController();
+$listeUsers=$user1C->afficherUsers();
+
 
 ?>
 <!DOCTYPE html>
@@ -73,10 +76,36 @@ include('../core/userC.php');
             <form action="" method="post">
                 <div class="row">
                     <div class="col-md-10 box1">
-                        <h2> La liste contient </span><?php echo $total ?> utilisateur(s).</h2>
-                        <?php
-                        echo $list;
-                        ?>
+                        <h2> La liste contient </span><?php 5  ?> utilisateur(s).</h2>
+                        <?PHP
+foreach($listeUsers as $row){
+	?>
+            <table class="table table-dark mt-3 ">
+                    <thead>
+                        <tr>
+                            <th scope="col">Prénom</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Mot de passe</th>
+                            <th scope="col">Statut</th>
+                        </tr>
+                    <tbody>
+        
+                        <tr>
+                        <td><?PHP echo $row['username']; ?></td>
+                        <td><?PHP echo $row['name']; ?></td>
+                        <td><?PHP echo $row['email']; ?></td>
+                        <td><?PHP echo $row['password']; ?></td>
+                        <td><?PHP echo $row['status']; ?></td>
+                        </tr>
+                        </tbody>
+
+                  </table>
+                  <a href="../controller2/updateuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-primary">Modifier</a>
+                  <a href="../controller2/deleteuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-danger">Supprimer</a>
+                  <?PHP
+}
+?>
                     </div>
                 </div>
             </form>

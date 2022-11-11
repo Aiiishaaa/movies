@@ -57,52 +57,92 @@ class UserController {
 		}
 	}
 
-    function afficherEmployes(){
+    function afficherUsers(){
 
 
         $sql = "SELECT * FROM users WHERE status not like 'admin'";
 		$db = config::getConnexion();
+
+
         try{
-            $result=$db->query($sql);
-            $total = $result->num_rows;
-            $list = '';
-            if ($result->num_rows > 0) {
-                // output data of each row
-                while ($row = $result->fetch_assoc()) {
-                    $list = $list . '
-                    <table class="table table-dark mt-3 ">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Username</th>
-                            <th scope="col">Mot de passe</th>
-                            <th scope="col">Statut</th>
-                        </tr>
-                    <tbody>
-                        <tr>
-                            <td>' . $row["username"] . '</td>
-                            <td>' . $row["name"] . '</td>
-                            <td>' . $row["email"] . '</td>
-                            <td>' . $row["password"] . '</td>
-                            <td>' . $row["status"] . '</td>
-                        </tr>
-                        </tbody>
-                  </table>
-                  <a href="updateuser.php?id=' . $row["id"] . '" class="btn btn-primary">Modifier</a>
-                  <a  href="../controller/deleteuser.php?id=' . $row["id"] . '" class="btn btn-danger">Supprimer</a>
-                  ';
-                  return $list;
-                }
-            } else {
-                echo "Il n'y a pas encore de compte créé !";
-            }
+            $liste=$db->query($sql);
+            return $liste;
             }
             catch (Exception $e){
                 die('Erreur: '.$e->getMessage());
-            }	
+            }
 
-        }	
+    }
+    function recupererUser($id){
+        $sql = "SELECT * from users where id='$id'";
+		$db = config::getConnexion();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
+	}
+
+	function modifierUser(User $user){
+		$sql="UPDATE users SET username=:username, name=:name, email=:email, password=:password where id= :id";
+		$db = Config::getConnexion();
+		$req=$db->prepare($sql);
+try{		
+
+    $req->bindValue(':id',$user->getId());
+    $req->bindValue(':name',$user->getName());
+    $req->bindValue(':username',$user->getUsername());
+    $req->bindValue(':password',$user->getPassword());
+    $req->bindValue(':email',$user->getEmail());
+    // $req->bindValue(':status',$user->getStatus());
+    $req->execute();
+    return true;
+      
+		// $idd=$user->getId();
+        // $name=$user->getName();
+        // $username=$user->getUsername();
+        // $password=$user->getPassword();
+        // $email=$user->getEmail();
+
+
+		// $datas = array(':idd'=>$idd, ':id'=>$id, ':name'=>$name,':username'=>$username,':password'=>$password,':email'=>$email);
+		// $req->bindValue(':idd',$idd);
+		// $req->bindValue(':id',$id);
+		// $req->bindValue(':name',$name);
+		// $req->bindValue(':username',$username);
+		// $req->bindValue(':email',$email);
+		// $req->bindValue(':password',$password);
+
+        // $req->execute();
+        // header('location: users.php#updatesuccess');
+        // return true;
+    }
+    catch (Exception $e){
+         $result = $req->queryString;
+        return $e->getMessage().' '.$result;
+    }
+		
+	}
+
+    function supprimerUser($id){
+        $sql = "DELETE  FROM users WHERE id= '$id'"; 
+		$db = config::getConnexion();
+        $req=$db->prepare($sql);
+		$req->bindValue(':id',$id);
+		try{
+            $req->execute();
+           // header('Location: index.php');
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
+	}
+
+
+
+
 	}
 
 
