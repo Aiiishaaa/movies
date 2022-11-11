@@ -23,6 +23,83 @@
 </head>
 
 <body>
+    <!-- Pop up boxes for login and registration -->
+    <div id="popup1" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Se connecter</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <form action="../controller/login.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Username" name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <br>
+                    <input type="submit" value="Se connecter" name="signup-btn" class="btn-log">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup2" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Créer un compte</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <form action="../controller2/register.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Nom" name="name" class="log-input" required>
+                    <br>
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Username" name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" placeholder="Email" name="email" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password" name="password" class="log-input" required>
+                    <br>
+                    <input type="checkbox" name="chkbox" required>J'accepte les termes et conditions
+                    <br>
+                    <input type="submit" value="S'enregistrer" name="signup-btn" class="btn-log">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="success" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Bravo!</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Votre compte a été créé avec succès! Merci de vous connecter <i class="fa fa-smile"></i></p>
+                </p>
+                <a href="#popup1" class="btn-main btn-main-primary">
+                    Se connecter
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="error" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Erreur</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Le nom d'utilisateur ou l'adresse électronique existe déjà ! <i class="fa fa-frown"></i></p>
+            </div>
+        </div>
+    </div>
+    <div id="error1" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Erreur</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Compte introuvable !<i class="fa fa-frown"></i></p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End of Pop up boxes for login and registration -->
     <!-- header section strats -->
     <header class="header_section ">
         <div class="container">
@@ -69,88 +146,83 @@
     <!-- end header section -->
 
     <!--  section playlistPublique  -->
-    <div class="container-fluid">
 
-	<h2 class="page-header text-center">Playlist</h2>
-	<div class="row justify-content-center">
-		<div class="col-sm-8 style_cart">
-			<?php 
-			if(isset($_SESSION['message'])){
-				?>
-				<div class="alert alert-info text-center">
-					<?php echo $_SESSION['message']; ?>
-				</div>
-				<?php
-				unset($_SESSION['message']);
-			}
+    <section class="playlistPublique">
+        <div class="container-fluid">
+            <h2 class="page-header text-center">Playlist</h2>
+            <div class="row justify-content-center">
+                <div class="col-sm-8 style_cart">
+                    <?php
+                    if (isset($_SESSION['message'])) {
+                    ?>
+                        <div class="alert alert-info text-center">
+                            <?php echo $_SESSION['message']; ?>
+                        </div>
+                    <?php
+                        unset($_SESSION['message']);
+                    }
 
-			?>
-			<form method="POST" action="../shop/save_cart.php">
-			<table class="table table-bordered table-striped">
-				<thead>
-					<th>Nom du film</th>
-					<th>Durée</th>
-				</thead>
-				<tbody>
-					<?php
-						//initialize total
-						$total = 0;
-						if(!empty($_SESSION['cart'])){
-						//connection
-						$conn = Database::connect();
-						//create array of initail qty which is 1
- 						$index = 0;
- 						if(!isset($_SESSION['qty_array'])){ //téléphone et combien de fois on l'a
- 							$_SESSION['qty_array'] = array_fill(0, count($_SESSION['cart']), 1);
- 						}
-						//  var_dump($_SESSION['qty_array']);
-						 //Implode : Rassemble les éléments d'un tableau en une chaîne //$_SESSION['cart'] nombre d'article
-						 $statement = "SELECT * FROM smartphones WHERE id IN (".implode(',',$_SESSION['cart']).")";
-						 $query = $conn->query($statement);
-							while($item = $query->fetch()){
-								?>
-								<tr>
-									<td>
-										<a href="../shop/delete_item.php?id=<?php echo $item['id']; ?>&index=<?php echo $index; ?>" class="btn btn-danger btn-sm"><span class="fas fa-trash-alt"></span></a>
-									</td>
-									<td><?php echo $item['name']; ?></td>
-									<td><?php echo number_format($item['price'], 2); ?>€</td>
-									<input type="hidden" name="indexes[]" value="<?php echo $index; ?>">
-									<td><input type="text" class="form-control" value="<?php echo $_SESSION['qty_array'][$index]; ?>" name="qty_<?php echo $index; ?>"></td>
-									<td><?php echo number_format($_SESSION['qty_array'][$index]*$item['price'], 2); ?>€</td>
-									<?php $total += $_SESSION['qty_array'][$index]*$item['price']; ?>
-								</tr>
-								<?php
-								$index ++;
-							}
-						}
-						else{
-							?>
-							<tr>
-								<td colspan="4" class="text-center">Aucun Film</td>
-							</tr>
-							<?php
-						}
-					?>
-					<tr>
+                    ?>
+                    <form method="POST" action="../shop/save_cart.php">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <th>Nom du film</th>
+                                <th>Durée</th>
+                            </thead>
+                            <tbody>
+                                <?php
+                                //initialize total
+                                $total = 0;
+                                if (!empty($_SESSION['cart'])) {
+                                    //connection
+                                    $conn = Database::connect();
+                                    //create array of initail qty which is 1
+                                    $index = 0;
+                                    if (!isset($_SESSION['qty_array'])) { //téléphone et combien de fois on l'a
+                                        $_SESSION['qty_array'] = array_fill(0, count($_SESSION['cart']), 1);
+                                    }
+                                    //  var_dump($_SESSION['qty_array']);
+                                    //Implode : Rassemble les éléments d'un tableau en une chaîne //$_SESSION['cart'] nombre d'article
+                                    $statement = "SELECT * FROM smartphones WHERE id IN (" . implode(',', $_SESSION['cart']) . ")";
+                                    $query = $conn->query($statement);
+                                    while ($item = $query->fetch()) {
+                                ?>
+                                        <tr>
+                                            <td>
+                                                <a href="../shop/delete_item.php?id=<?php echo $item['id']; ?>&index=<?php echo $index; ?>" class="btn btn-danger btn-sm"><span class="fas fa-trash-alt"></span></a>
+                                            </td>
+                                            <td><?php echo $item['name']; ?></td>
+                                            <td><?php echo number_format($item['price'], 2); ?>€</td>
+                                            <input type="hidden" name="indexes[]" value="<?php echo $index; ?>">
+                                            <td><input type="text" class="form-control" value="<?php echo $_SESSION['qty_array'][$index]; ?>" name="qty_<?php echo $index; ?>"></td>
+                                            <td><?php echo number_format($_SESSION['qty_array'][$index] * $item['price'], 2); ?>€</td>
+                                            <?php $total += $_SESSION['qty_array'][$index] * $item['price']; ?>
+                                        </tr>
+                                    <?php
+                                        $index++;
+                                    }
+                                } else {
+                                    ?>
+                                    <tr>
+                                        <td colspan="4" class="text-center">Aucun Film</td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                                <tr>
 
-					</tr>
-				</tbody>
-			</table>
-			</form>
-		</div>
-	</div>
-</div>
-
-    <section class="section_playlistPublique">
-        <div class="container">
-            <div id="playlist" class="row"></div>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
     <!-- end playlistPublique section -->
 
-      <!-- footer section -->
-      <footer class="footer_section ">
+    <!-- footer section -->
+    <footer class="footer_section ">
         <div class="container ">
             <div class="row ">
                 <div class="col-md-4 footer-col ">

@@ -8,29 +8,30 @@ if (isset($_SESSION['username'])) {
     }
 }
 ?>
-    <meta name="keywords" content="Film, playlist,streaming, cinéma, synopsys, movies" />
-    <meta name="author" content="Aicha Takwa Naïm" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films,  résumé et bande-annonce.">
-    <meta property="og:type" content="Mymovies">
-    <meta property="og:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
-    <meta property="og:site_name" content="Mymovies">
-    <meta property="og:url" content="https://mymovies.fr">
-    <meta property="og:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce.">
-    <meta property="og:image" content="https://mymovies.fr/logo.jpg">
-    <meta property="twitter:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
-    <meta property="twitter:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce.">
-    <meta property="twitter:site" content="@mymovies">
-    <meta property="twitter:creator" content="@mymovies">
-    <meta property="twitter:card" content="Summary_large_image">
-    <meta property="twitter:image:src" content="https://mymovies.fr/logo.jpg">
-    <link rel="shortcut icon" href="../images/favicon.ico" type="">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
-    <link href="../css/style.css" rel="stylesheet" />
+<html lang="<?= $current_lang; ?>">
+<meta name="keywords" content="Film, playlist,streaming, cinéma, synopsys, movies" />
+<meta name="author" content="Aicha Takwa Naïm" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films,  résumé et bande-annonce.">
+<meta property="og:type" content="Mymovies">
+<meta property="og:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
+<meta property="og:site_name" content="Mymovies">
+<meta property="og:url" content="https://mymovies.fr">
+<meta property="og:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce.">
+<meta property="og:image" content="https://mymovies.fr/logo.jpg">
+<meta property="twitter:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
+<meta property="twitter:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce.">
+<meta property="twitter:site" content="@mymovies">
+<meta property="twitter:creator" content="@mymovies">
+<meta property="twitter:card" content="Summary_large_image">
+<meta property="twitter:image:src" content="https://mymovies.fr/logo.jpg">
+<link rel="shortcut icon" href="../images/favicon.ico" type="">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Custom styles for this template -->
+<link href="../css/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -114,7 +115,7 @@ if (isset($_SESSION['username'])) {
     <!-- header section strats -->
     <header class="header_section ">
         <div class="container ">
-            <nav class="navbar navbar-expand-lg custom_nav-container aria-label="Breadcrumb">
+            <nav class="navbar navbar-expand-lg custom_nav-container aria-label=" Breadcrumb">
                 <a class="navbar-brand" href="index.php">
                     <span>
                         My Movies

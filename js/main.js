@@ -366,5 +366,4 @@ function getTopMovies() {
             console.log(error);
         });
 
-
 }

@@ -9,8 +9,8 @@ if (!isset($_SESSION['username'])) {
 }
 // include('userlist.php');
 include('../core/userC.php');
-$user1C=new UserController();
-$listeUsers=$user1C->afficherUsers();
+$user1C = new UserController();
+$listeUsers = $user1C->afficherUsers();
 
 
 ?>
@@ -78,100 +78,100 @@ $listeUsers=$user1C->afficherUsers();
                     <div class="col-md-10 box1">
                         <h2> La liste contient </span><?php 5  ?> utilisateur(s).</h2>
                         <?PHP
-foreach($listeUsers as $row){
-	?>
-            <table class="table table-dark mt-3 ">
-                    <thead>
-                        <tr>
-                            <th scope="col">Prénom</th>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Mot de passe</th>
-                            <th scope="col">Statut</th>
-                        </tr>
-                    <tbody>
-        
-                        <tr>
-                        <td><?PHP echo $row['username']; ?></td>
-                        <td><?PHP echo $row['name']; ?></td>
-                        <td><?PHP echo $row['email']; ?></td>
-                        <td><?PHP echo $row['password']; ?></td>
-                        <td><?PHP echo $row['status']; ?></td>
-                        </tr>
-                        </tbody>
+                        foreach ($listeUser as $row) {
+                        ?>
+                            <table class="table table-dark mt-3 ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Prénom</th>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Mot de passe</th>
+                                        <th scope="col">Statut</th>
+                                    </tr>
+                                <tbody>
 
-                  </table>
-                  <a href="../controller2/updateuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-primary">Modifier</a>
-                  <a href="../controller2/deleteuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-danger">Supprimer</a>
-                  <?PHP
-}
-?>
+                                    <tr>
+                                        <td><?PHP echo $row['username']; ?></td>
+                                        <td><?PHP echo $row['name']; ?></td>
+                                        <td><?PHP echo $row['email']; ?></td>
+                                        <td><?PHP echo $row['password']; ?></td>
+                                        <td><?PHP echo $row['status']; ?></td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <a href="../controller2/updateuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-primary">Modifier</a>
+                            <a href="../controller2/deleteuser.php?id=<?PHP echo $row['id']; ?>" class="btn btn-danger">Supprimer</a>
+                        <?PHP
+                        }
+                        ?>
                     </div>
                 </div>
             </form>
-           <a href="#popup2" class=" mt-5 btn btn-success"> Ajouter nouveau compte</a>
+            <a href="#popup2" class=" mt-5 btn btn-success"> Ajouter nouveau compte</a>
         </div>
     </section>
 
-        <div id="popup2" class="popup-overlay">
-            <div class="log-popup">
-                <h2>Ajouter nouveau compte</h2>
-                <a class="close-window" href="#">&times;</a>
-                <div class="log-content">
-                    <form action="../controller/register.php" method="post">
-                        <i class="fa fa-user icon"></i>
-                        <input type="text" placeholder="Nom complet" name="fullname" class="log-input" required>
-                        <br>
-                        <i class="fa fa-envelope icon"></i>
-                        <input type="email" placeholder="Mail" name="email" class="log-input" required>
-                        <br>
-                        <i class="fa fa-link icon"></i>
-                        <input type="text" placeholder="Nom d'utilisateur " name="username" class="log-input" required>
-                        <br>
-                        <i class="fa fa-lock icon"></i>
-                        <input type="password" placeholder="Mot de passe" name="password" class="log-input" required>
-                        <br>
-                        <input type="submit" value="S'inscrire" name="signup-btn" class="btn-log">
-                    </form>
-                </div>
+    <div id="popup2" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Ajouter nouveau compte</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <form action="../controller/register.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Nom complet" name="fullname" class="log-input" required>
+                    <br>
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" placeholder="Mail" name="email" class="log-input" required>
+                    <br>
+                    <i class="fa fa-link icon"></i>
+                    <input type="text" placeholder="Nom d'utilisateur " name="username" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Mot de passe" name="password" class="log-input" required>
+                    <br>
+                    <input type="submit" value="S'inscrire" name="signup-btn" class="btn-log">
+                </form>
             </div>
         </div>
-        <div id="success" class="popup-overlay">
-            <div class="log-popup">
-                <h2>Success</h2>
-                <a class="close-window" href="#">&times;</a>
-                <div class="log-content">
-                    <p>Le compte a été créé avec succès</p>
-                </div>
+    </div>
+    <div id="success" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Success</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Le compte a été créé avec succès</p>
             </div>
         </div>
-        <div id="updatesuccess" class="popup-overlay">
-            <div class="log-popup">
-                <h2>Succès</h2>
-                <a class="close-window" href="#">&times;</a>
-                <div class="log-content">
-                    <p>Les données de l'utilisateur ont été mises à jour avec succès !</p>
-                </div>
+    </div>
+    <div id="updatesuccess" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Succès</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Les données de l'utilisateur ont été mises à jour avec succès !</p>
             </div>
         </div>
-        <div id="error" class="popup-overlay">
-            <div class="log-popup">
-                <h2>Succès</h2>
-                <a class="close-window" href="#">&times;</a>
-                <div class="log-content">
-                    <p>Le nom d'utilisateur ou l'adresse électronique existe déjà ! <i class="fa fa-frown"></i></p>
-                </div>
+    </div>
+    <div id="error" class="popup-overlay">
+        <div class="log-popup">
+            <h2>Succès</h2>
+            <a class="close-window" href="#">&times;</a>
+            <div class="log-content">
+                <p>Le nom d'utilisateur ou l'adresse électronique existe déjà ! <i class="fa fa-frown"></i></p>
             </div>
         </div>
+    </div>
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
