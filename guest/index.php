@@ -11,15 +11,15 @@ if (isset($_SESSION['username'])) {
     <meta name="keywords" content="Film, playlist,streaming, cinéma, synopsys, movies" />
     <meta name="author" content="Aicha Takwa Naïm" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce. Regardez également votre film préféré en streaming.">
+    <meta name="description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films,  résumé et bande-annonce.">
     <meta property="og:type" content="Mymovies">
     <meta property="og:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
     <meta property="og:site_name" content="Mymovies">
     <meta property="og:url" content="https://mymovies.fr">
-    <meta property="og:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce. Regardez également votre film préféré en streaming.">
+    <meta property="og:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce.">
     <meta property="og:image" content="https://mymovies.fr/logo.jpg">
     <meta property="twitter:title" content="Mymovies cinéma, consulter et regarder plus de 10000 films">
-    <meta property="twitter:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce. Regardez également votre film préféré en streaming.">
+    <meta property="twitter:description" content="Mymovies référence plus de 10 000 films. Vous pourrez consulter en détails les films, synopsys et bande-annonce.">
     <meta property="twitter:site" content="@mymovies">
     <meta property="twitter:creator" content="@mymovies">
     <meta property="twitter:card" content="Summary_large_image">
@@ -114,7 +114,7 @@ if (isset($_SESSION['username'])) {
     <!-- header section strats -->
     <header class="header_section ">
         <div class="container ">
-            <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <nav class="navbar navbar-expand-lg custom_nav-container aria-label="Breadcrumb">
                 <a class="navbar-brand" href="index.php">
                     <span>
                         My Movies
