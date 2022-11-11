@@ -71,7 +71,7 @@ include('userlist.php');
             <form action="" method="post">
                 <div class="row">
                     <div class="col-md-10 box1">
-                        <h3> La liste contient </span><?php echo $total ?> utilisateur(s).</h3>
+                        <h2> La liste contient </span><?php echo $total ?> utilisateur(s).</h2>
                         <?php
                         echo $list;
                         ?>

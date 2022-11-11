@@ -216,6 +216,12 @@
             width: 100%;
             border-collapse: collapse;
         }
+        /* section user */
+        
+        body {
+            background-color: #000
+        }
+        /*end user section*/
         /* footer section*/
         
         .footer_section {
@@ -345,6 +351,13 @@
             margin-top: 30%;
             width: 100%;
             max-width: 300px;
+        }
+        
+        h2 {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #fff;
         }
         
         .contact_section h2 {

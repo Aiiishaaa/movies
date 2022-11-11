@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -38,13 +43,16 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent ">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item ">
-                            <a class="nav-link " href="user.php"> Données personnelles </a>
+                            <a class="nav-link " href="../user/index.php"> Données personnelles <span class="sr-only ">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="playlist.php"> Playlists </a>
+                            <a class="nav-link" href="../guest/browse.php"> Catalogue </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="playlist.php"> Playlists </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="contact.php"> Contact</a>
+                            <a class="nav-link " href="../user/contact.php"> Contact</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0 ">
@@ -56,23 +64,31 @@
     </header>
     <!-- User section -->
     <section class="user_section ">
-        <div class="container ">
-            <div class="row ">
-                <div class="col-md-12 ">
-                    <div class="user_profile ">
-                        <div class="user_img ">
-                            <img src="../images/user.png " alt="user_img " />
+        <div class="container rounded bg-white mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-3 border-right">
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://i.imgur.com/wvxPV9S.png"><span class="font-weight-bold"><?php echo $_SESSION['username']; ?></span><span class="text-black-50"></span><span> </span></div>
+                </div>
+                <div class="col-md-5 border-right">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Paramètres du profil</h4>
                         </div>
-                        <div class="user_title
-                            <h2> <?php echo $_SESSION['user']['username']; ?> </h2>
-                            <p> <?php echo $_SESSION['user']['email']; ?> </p>
+                        <div class="row mt-2">
+                            <div class="col-md-6"><label class="labels">Nom </label><input type="text" class="form-control" value=""></div>
+                            <div class="col-md-6"><label class="labels">Username</label><input type="text" class="form-control" value="<?php echo $_SESSION['username']; ?>"></div>
                         </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Mot de passe</label><input type="text" class="form-control" value=""></div>
+                            <div class="col-md-12"><label class="labels">Email </label><input type="text" class="form-control" value=""></div>
+                        </div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Sauvegarder</button></div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Supprimer le compte</button></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- end  user section -->
 
