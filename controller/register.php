@@ -12,7 +12,7 @@ var_dump($employe1);
 //Partie3
 $user1C=new UserController();
 $user1C->addUser($user1);
-//header('Location: afficherEmploye.php');
+header('Location: ../guest/index.php#success');
 	
 }else{
 	echo "vérifier les champs";

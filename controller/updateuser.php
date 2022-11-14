@@ -116,7 +116,7 @@ header('location: ../admin/users.php#error');
                         </tr>
                         <tr>
                             <td>Mot de passe</td>
-                            <td><input type="password" name="password" value="<?php echo $row['password']; ?>" required></td>
+                            <td><input type="text" name="password" value="<?php echo $row['password']; ?>" required></td>
                         </tr>
                         <tr>
                             <td></td>
